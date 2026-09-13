@@ -1,27 +1,72 @@
-# APP Música Obel
+# 🎵 Plataforma Digital de Educação Musical — Protótipo
 
-Protótipo inicial de uma plataforma digital para organização, divulgação e atendimento das aulas de música do professor Obel.
+🇧🇷 Português | [🇺🇸 English](README.en.md) | [🇪🇸 Español](README.es.md)
 
-> **Nome provisório do produto:** App Música Obel
+> Protótipo de um ecossistema digital para divulgação, captação, atendimento, agendamento, aulas, conteúdos e gestão de serviços de educação musical.
 
-## Objetivo
+## 🎯 Sobre este repositório
 
-Explorar e validar uma experiência digital integrada para:
+Este repositório documenta a concepção, prototipagem e evolução de uma plataforma digital voltada à educação musical.
 
-- captação de novos alunos;
-- cadastro e atendimento;
-- agendamento de aulas;
-- aulas presenciais e on-line;
-- biblioteca de vídeos e materiais;
-- planos e serviços;
-- consultorias e novos produtos educacionais;
-- automações e integrações;
-- futura evolução para aplicativo.
+O projeto parte de uma necessidade real de organizar a jornada do aluno e a operação do educador, inicialmente utilizando **dados fictícios e sanitizados**.
 
-## Princípio do protótipo
+O foco está no percurso completo:
 
-Este repositório utiliza **dados fictícios e sanitizados**. Nenhum dado real de aluno, contato ou cliente deve ser inserido nesta fase.
+**Descoberta → Cadastro → Atendimento → Serviço → Agendamento → Aula → Conteúdo → Acompanhamento → Renovação**
 
-## Status
+## 🧩 Principais áreas
 
-🟡 Protótipo / descoberta de produto
+- 🌐 Presença digital e landing page
+- 📝 Captação e cadastro de interessados
+- 👥 Gestão de alunos e leads
+- 📅 Agendamento e calendário
+- 🎥 Aulas on-line e conteúdos gravados
+- 📚 Materiais didáticos
+- 💳 Planos e possibilidades de pagamento
+- 🤖 Automações e comunicação
+- 📊 Indicadores e acompanhamento
+- 💼 Novos serviços e consultorias
+- 📱 PWA/aplicativo como evolução futura
+
+## 🧭 Estratégia de desenvolvimento
+
+O projeto será desenvolvido de forma incremental:
+
+1. **Protótipo** — validar a experiência e os fluxos.
+2. **Estrutura** — definir requisitos, arquitetura e integrações.
+3. **Proposta** — consolidar escopo, prioridades, custos e roadmap.
+4. **MVP** — implementar somente o núcleo validado.
+5. **Evolução** — automações, conteúdo, pagamentos, métricas e aplicativo.
+
+## 📂 Organização do repositório
+
+```text
+.
+├── 01_Documentacao/        # visão, objetivos, requisitos e governança
+├── 02_Planejamento/        # roadmap, prioridades e arquitetura
+├── 03_Sprints/             # ciclos de prototipagem e desenvolvimento
+├── 04_Materiais_Educador/  # materiais e referências para operação
+├── 05_Materiais_Usuarios/  # materiais e conteúdos da experiência do usuário
+├── data/                   # dados fictícios/sanitizados
+├── docs/                   # documentos técnicos e sínteses
+└── index.html              # protótipo publicado no GitHub Pages
+```
+
+A estrutura será ampliada conforme o projeto avançar, evitando criar pastas vazias apenas por padronização.
+
+## 🔐 Privacidade e publicação responsável
+
+Este repositório é público. Não publicar dados pessoais, contatos, credenciais, informações financeiras ou dados identificáveis de alunos.
+
+Os exemplos iniciais devem utilizar dados fictícios, agregados ou devidamente sanitizados.
+
+## 🚧 Status
+
+🟡 **Protótipo / descoberta de produto — em desenvolvimento.**
+
+## 👤 Autor
+
+**Filipe G Morais**
+
+GitHub: https://github.com/sayjinblackbelt  
+Repository: https://github.com/sayjinblackbelt/APP_Musica
