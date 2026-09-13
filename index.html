@@ -1,221 +1,47 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Protótipo navegável de uma plataforma digital de educação musical.">
-  <title>Plataforma de Educação Musical — Protótipo navegável</title>
-  <style>
-    :root { --ink:#172033; --muted:#667085; --bg:#f5f7fb; --card:#fff; --line:#e4e8ef; --primary:#243b69; --accent:#7c3aed; --soft:#eef2ff; --ok:#16794b; }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); line-height:1.55; }
-    button,a { font:inherit; }
-    button { cursor:pointer; }
-    .wrap { max-width:1120px; margin:auto; padding:0 22px; }
-    header { position:sticky; top:0; z-index:20; background:rgba(255,255,255,.96); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
-    nav { min-height:64px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
-    .brand { font-weight:800; text-decoration:none; color:var(--ink); white-space:nowrap; }
-    .navlinks { display:flex; gap:4px; overflow:auto; }
-    .navlinks button { border:0; background:transparent; color:var(--muted); padding:9px 11px; border-radius:9px; white-space:nowrap; }
-    .navlinks button:hover,.navlinks button.active { background:var(--soft); color:var(--primary); }
-    main { min-height:calc(100vh - 64px); }
-    .view { display:none; padding:46px 0 70px; }
-    .view.active { display:block; }
-    .hero { background:linear-gradient(135deg,#101b35,#304b83); color:#fff; padding:72px 0; }
-    .hero h1 { font-size:clamp(2.4rem,6vw,4.8rem); line-height:1.02; max-width:850px; margin:12px 0 20px; }
-    .hero p { max-width:760px; font-size:1.12rem; opacity:.92; }
-    .eyebrow { text-transform:uppercase; letter-spacing:.12em; font-size:.76rem; opacity:.75; font-weight:700; }
-    .actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:26px; }
-    .btn { display:inline-flex; align-items:center; justify-content:center; gap:7px; border:1px solid var(--line); border-radius:10px; padding:11px 16px; font-weight:700; text-decoration:none; background:#fff; color:var(--ink); }
-    .btn.primary { background:var(--accent); border-color:var(--accent); color:#fff; }
-    .btn.ghost { background:transparent; border-color:rgba(255,255,255,.4); color:#fff; }
-    .section-head { margin-bottom:24px; }
-    .section-head h1,.section-head h2 { margin:0 0 7px; }
-    .muted { color:var(--muted); }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; }
-    .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px; box-shadow:0 7px 25px rgba(15,23,42,.045); }
-    .card h3 { margin:0 0 8px; }
-    .price { font-size:1.8rem; font-weight:800; margin:12px 0; }
-    .tag { display:inline-block; padding:4px 9px; border-radius:999px; background:var(--soft); color:var(--primary); font-size:.78rem; font-weight:700; }
-    .flow { display:flex; flex-wrap:wrap; gap:8px; margin:24px 0; }
-    .flow span { background:var(--soft); border-radius:999px; padding:7px 11px; font-weight:700; font-size:.9rem; }
-    form { display:grid; gap:14px; max-width:650px; }
-    label { display:grid; gap:6px; font-weight:700; }
-    input,select { width:100%; border:1px solid #cfd6e2; border-radius:9px; padding:11px 12px; background:#fff; color:var(--ink); }
-    .notice { background:#eef8f2; border:1px solid #bfe2cd; color:#175b3a; padding:13px 15px; border-radius:10px; display:none; }
-    .notice.show { display:block; }
-    .table { width:100%; border-collapse:collapse; background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden; }
-    .table th,.table td { padding:12px; border-bottom:1px solid var(--line); text-align:left; }
-    .table th { font-size:.82rem; color:var(--muted); }
-    .kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:14px; margin:22px 0; }
-    .kpi strong { display:block; font-size:1.8rem; }
-    .back { margin-bottom:18px; }
-    footer { border-top:1px solid var(--line); padding:26px 0; color:var(--muted); font-size:.9rem; }
-    @media (max-width:760px) { .brand { display:none; } nav { justify-content:center; } .hero { padding:52px 0; } .navlinks { max-width:100%; } }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Protótipo navegável de uma plataforma digital de educação musical.">
+<title>Educação Musical — Protótipo</title>
+<style>
+:root{--ink:#172033;--muted:#667085;--bg:#f5f7fb;--card:#fff;--line:#e4e8ef;--primary:#243b69;--accent:#7c3aed;--soft:#eef2ff;--ok:#16794b;--danger:#b42318}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}button,input,select{font:inherit}button{cursor:pointer}.wrap{max-width:1120px;margin:auto;padding:0 22px}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}nav{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-weight:800;color:var(--ink);text-decoration:none;white-space:nowrap}.navlinks{display:flex;gap:4px;overflow:auto}.navlinks button{border:0;background:transparent;color:var(--muted);padding:9px 11px;border-radius:9px;white-space:nowrap}.navlinks button:hover,.navlinks button.active{background:var(--soft);color:var(--primary)}
+main{min-height:calc(100vh - 64px)}.view{display:none;padding:42px 0 72px}.view.active{display:block}.hero{background:linear-gradient(135deg,#101b35,#304b83);color:#fff;padding:70px 0}.hero h1{font-size:clamp(2.4rem,6vw,4.8rem);line-height:1.02;max-width:850px;margin:12px 0 20px}.hero p{max-width:760px;font-size:1.12rem;opacity:.92}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.76rem;opacity:.78;font-weight:700}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid var(--line);border-radius:10px;padding:11px 16px;font-weight:700;text-decoration:none;background:#fff;color:var(--ink);transition:.16s ease}.btn:hover{transform:translateY(-1px)}.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}.btn.ghost{background:transparent;border-color:rgba(255,255,255,.4);color:#fff}.btn:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #c4b5fd;outline-offset:2px}
+.section-head{margin-bottom:24px}.section-head h1,.section-head h2{margin:0 0 7px}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 7px 25px rgba(15,23,42,.045)}.card h3{margin:0 0 8px}.price{font-size:1.8rem;font-weight:800;margin:12px 0}.tag{display:inline-block;padding:4px 9px;border-radius:999px;background:var(--soft);color:var(--primary);font-size:.78rem;font-weight:700}
+.flow{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}.flow span{background:var(--soft);border-radius:999px;padding:7px 11px;font-weight:700;font-size:.9rem}.progress{display:flex;align-items:center;gap:8px;margin:0 0 28px}.step{height:7px;flex:1;border-radius:99px;background:#e4e7ec}.step.done{background:var(--accent)}.step.current{background:#c4b5fd}.step-label{font-size:.8rem;color:var(--muted);white-space:nowrap}
+form{display:grid;gap:14px;max-width:650px}label{display:grid;gap:6px;font-weight:700}input,select{width:100%;border:1px solid #cfd6e2;border-radius:9px;padding:11px 12px;background:#fff;color:var(--ink)}.hint{font-size:.82rem;font-weight:400;color:var(--muted)}.notice{padding:13px 15px;border-radius:10px;margin:0 0 18px;display:none}.notice.show{display:block}.notice.ok{background:#eef8f2;border:1px solid #bfe2cd;color:#175b3a}.notice.error{background:#fff1f0;border:1px solid #f3c4c0;color:var(--danger)}
+.choice{position:relative}.choice.selected{border:2px solid var(--accent);padding:21px}.choice button{width:100%}.summary{background:#f8f7ff;border:1px solid #ddd6fe;border-radius:12px;padding:16px;margin-bottom:18px}.summary strong{display:block}.hidden{display:none!important}.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin:22px 0}.kpi strong{display:block;font-size:1.8rem}.back{margin-bottom:18px}.table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);overflow:hidden}.table th,.table td{padding:12px;border-bottom:1px solid var(--line);text-align:left}.table th{font-size:.82rem;color:var(--muted)}footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:.9rem}
+@media(max-width:760px){.brand{display:none}nav{justify-content:center}.hero{padding:52px 0}.navlinks{max-width:100%}.view{padding-top:30px}.step-label{display:none}}
+</style>
 </head>
 <body>
-<header>
-  <div class="wrap">
-    <nav>
-      <a class="brand" href="#home" data-route="home">Educação Musical</a>
-      <div class="navlinks" aria-label="Navegação principal">
-        <button data-route="home">Home</button>
-        <button data-route="servicos">Serviços/Planos</button>
-        <button data-route="cadastro">Cadastro</button>
-        <button data-route="agendamento">Agendamento</button>
-        <button data-route="usuario">Área do usuário</button>
-        <button data-route="educador">Painel do educador</button>
-      </div>
-    </nav>
-  </div>
-</header>
-
+<header><div class="wrap"><nav><a class="brand" href="#home" data-route="home">Educação Musical</a><div class="navlinks" aria-label="Navegação principal"><button data-route="home">Home</button><button data-route="servicos">Serviços</button><button data-route="cadastro">Cadastro</button><button data-route="agendamento">Agendamento</button><button data-route="usuario">Área do aluno</button><button data-route="educador">Educador</button></div></nav></div></header>
 <main>
-  <section class="view active" id="home">
-    <div class="hero">
-      <div class="wrap">
-        <div class="eyebrow">Protótipo navegável · Dados fictícios</div>
-        <h1>Uma experiência digital para organizar o ensino musical.</h1>
-        <p>Este protótipo transforma a proposta em uma pequena experiência de produto: descobrir serviços, demonstrar interesse, escolher uma opção, agendar e visualizar a experiência do aluno e do educador.</p>
-        <div class="actions">
-          <button class="btn primary" data-route="servicos">Explorar serviços</button>
-          <button class="btn ghost" data-route="usuario">Ver área do usuário</button>
-        </div>
-      </div>
-    </div>
-    <div class="wrap" style="padding-top:42px">
-      <div class="section-head"><h2>O fluxo que estamos testando</h2><p class="muted">Ainda não é um sistema real. É uma simulação para validar a experiência antes de escolher a tecnologia definitiva.</p></div>
-      <div class="flow"><span>Descoberta</span><span>Serviço</span><span>Cadastro</span><span>Agendamento</span><span>Aula</span><span>Conteúdo</span><span>Acompanhamento</span><span>Gestão</span></div>
-      <div class="grid">
-        <div class="card"><h3>Para quem aprende</h3><p class="muted">Encontrar uma opção, demonstrar interesse, agendar e acompanhar aulas e materiais.</p></div>
-        <div class="card"><h3>Para quem ensina</h3><p class="muted">Visualizar alunos, agenda, serviços, conteúdos e próximos atendimentos.</p></div>
-        <div class="card"><h3>Para o negócio</h3><p class="muted">Começar com ferramentas simples e gratuitas e só aumentar a complexidade quando houver validação.</p></div>
-      </div>
-    </div>
-  </section>
+<section class="view active" id="home"><div class="hero"><div class="wrap"><div class="eyebrow">Protótipo navegável · Dados fictícios</div><h1>Uma experiência digital para organizar o ensino musical.</h1><p>Vamos testar primeiro a jornada de quem aprende: entender a proposta, escolher um serviço, demonstrar interesse, agendar e acompanhar a próxima aula.</p><div class="actions"><button class="btn primary" data-route="servicos">Começar jornada</button><button class="btn ghost" data-route="usuario">Ver área do aluno</button></div></div></div><div class="wrap" style="padding-top:42px"><div class="section-head"><h2>O que estamos validando</h2><p class="muted">A interface é uma simulação. O objetivo é descobrir se a experiência faz sentido antes de escolher a tecnologia definitiva.</p></div><div class="flow"><span>Descoberta</span><span>Serviço</span><span>Cadastro</span><span>Agendamento</span><span>Confirmação</span><span>Área do aluno</span></div><div class="grid"><div class="card"><h3>Clareza</h3><p class="muted">O aluno entende onde está e qual é o próximo passo.</p></div><div class="card"><h3>Baixa fricção</h3><p class="muted">Cada etapa pede somente o necessário para avançar.</p></div><div class="card"><h3>Feedback</h3><p class="muted">Toda ação importante informa claramente o resultado.</p></div></div></div></section>
 
-  <section class="view" id="servicos">
-    <div class="wrap">
-      <div class="back"><button class="btn" data-route="home">← Voltar</button></div>
-      <div class="section-head"><h1>Serviços e planos</h1><p class="muted">Catálogo inicial demonstrativo. Valores e condições são fictícios e servem apenas para testar a jornada.</p></div>
-      <div class="grid">
-        <article class="card"><span class="tag">Individual</span><h3>Plano Essencial</h3><p class="muted">Aulas individuais com apoio de materiais digitais.</p><div class="price">R$ 180/mês</div><button class="btn primary" data-service="Plano Essencial" data-route="cadastro">Tenho interesse</button></article>
-        <article class="card"><span class="tag">Online</span><h3>Plano Online</h3><p class="muted">Aulas on-line e acesso à biblioteca de conteúdos.</p><div class="price">R$ 150/mês</div><button class="btn primary" data-service="Plano Online" data-route="cadastro">Tenho interesse</button></article>
-        <article class="card"><span class="tag">Experimental</span><h3>Aula experimental</h3><p class="muted">Primeiro contato para conhecer a metodologia e alinhar objetivos.</p><div class="price">Gratuita</div><button class="btn primary" data-service="Aula experimental" data-route="cadastro">Quero experimentar</button></article>
-      </div>
-    </div>
-  </section>
+<section class="view" id="servicos"><div class="wrap"><div class="progress" aria-label="Etapa 1 de 5"><span class="step done"></span><span class="step current"></span><span class="step"></span><span class="step"></span><span class="step"></span><span class="step-label">2/5 · Serviço</span></div><div class="back"><button class="btn" data-route="home">← Voltar</button></div><div class="section-head"><h1>Escolha como começar</h1><p class="muted">Compare rapidamente as opções disponíveis.</p></div><div class="grid"><article class="card choice" data-choice="Plano Essencial"><span class="tag">Individual</span><h3>Plano Essencial</h3><p class="muted">Aulas individuais com apoio de materiais digitais.</p><div class="price">R$ 180/mês</div><button class="btn primary" data-service="Plano Essencial" data-route="cadastro">Tenho interesse</button></article><article class="card choice" data-choice="Plano Online"><span class="tag">Online</span><h3>Plano Online</h3><p class="muted">Aulas on-line e acesso à biblioteca de conteúdos.</p><div class="price">R$ 150/mês</div><button class="btn primary" data-service="Plano Online" data-route="cadastro">Tenho interesse</button></article><article class="card choice" data-choice="Aula experimental"><span class="tag">Primeiro contato</span><h3>Aula experimental</h3><p class="muted">Conheça a metodologia e alinhe seus objetivos.</p><div class="price">Gratuita</div><button class="btn primary" data-service="Aula experimental" data-route="cadastro">Quero experimentar</button></article></div></div></section>
 
-  <section class="view" id="cadastro">
-    <div class="wrap">
-      <div class="back"><button class="btn" data-route="servicos">← Serviços</button></div>
-      <div class="section-head"><h1>Cadastro de interesse</h1><p class="muted">Nesta fase, o formulário apenas simula a entrada de um novo interessado.</p></div>
-      <div id="cadastroNotice" class="notice">Cadastro simulado com sucesso. O próximo passo da jornada é escolher um horário.</div>
-      <form id="cadastroForm">
-        <label>Nome<input name="nome" required placeholder="Ex.: Marina Souza"></label>
-        <label>WhatsApp<input name="whatsapp" required placeholder="(00) 00000-0000"></label>
-        <label>Interesse<select name="interesse"><option>Plano Essencial</option><option>Plano Online</option><option>Aula experimental</option></select></label>
-        <label>Nível<select name="nivel"><option>Iniciante</option><option>Intermediário</option><option>Avançado</option></select></label>
-        <button class="btn primary" type="submit">Continuar para agendamento →</button>
-      </form>
-    </div>
-  </section>
+<section class="view" id="cadastro"><div class="wrap"><div class="progress"><span class="step done"></span><span class="step done"></span><span class="step current"></span><span class="step"></span><span class="step"></span><span class="step-label">3/5 · Cadastro</span></div><div class="back"><button class="btn" data-route="servicos">← Serviços</button></div><div class="section-head"><h1>Vamos preparar seu agendamento</h1><p class="muted">Só precisamos de algumas informações para continuar.</p></div><div id="cadastroSummary" class="summary"><span class="muted">Serviço escolhido</span><strong id="selectedService">Ainda não selecionado</strong></div><div id="cadastroNotice" class="notice"></div><form id="cadastroForm"><label>Nome<input name="nome" required autocomplete="name" placeholder="Ex.: Marina Souza"><span class="hint">Usado apenas nesta simulação.</span></label><label>WhatsApp<input name="whatsapp" required autocomplete="tel" placeholder="(00) 00000-0000"></label><label>Nível<select name="nivel"><option>Iniciante</option><option>Intermediário</option><option>Avançado</option></select></label><button class="btn primary" type="submit">Continuar para horários →</button></form></div></section>
 
-  <section class="view" id="agendamento">
-    <div class="wrap">
-      <div class="back"><button class="btn" data-route="cadastro">← Cadastro</button></div>
-      <div class="section-head"><h1>Agendamento</h1><p class="muted">Simulação de disponibilidade. Em uma implementação real, esta etapa poderá conversar com uma agenda.</p></div>
-      <div id="agendaNotice" class="notice">Horário reservado na simulação. Agora podemos visualizar a área do usuário.</div>
-      <div class="grid">
-        <div class="card"><h3>Terça · 15/09</h3><p>19:00 · Online</p><button class="btn primary" data-book="15/09 · 19:00">Escolher horário</button></div>
-        <div class="card"><h3>Quarta · 16/09</h3><p>18:00 · Presencial</p><button class="btn primary" data-book="16/09 · 18:00">Escolher horário</button></div>
-        <div class="card"><h3>Quinta · 17/09</h3><p>20:00 · Online</p><button class="btn primary" data-book="17/09 · 20:00">Escolher horário</button></div>
-      </div>
-    </div>
-  </section>
+<section class="view" id="agendamento"><div class="wrap"><div class="progress"><span class="step done"></span><span class="step done"></span><span class="step done"></span><span class="step current"></span><span class="step"></span><span class="step-label">4/5 · Horário</span></div><div class="back"><button class="btn" data-route="cadastro">← Cadastro</button></div><div class="section-head"><h1>Escolha um horário</h1><p class="muted">Veja as opções e escolha a que funciona melhor para você.</p></div><div id="agendaNotice" class="notice"></div><div class="grid"><div class="card"><span class="tag">Online</span><h3>Terça · 15/09</h3><p>19:00</p><button class="btn primary" data-book="15/09 · 19:00 · Online">Escolher</button></div><div class="card"><span class="tag">Presencial</span><h3>Quarta · 16/09</h3><p>18:00</p><button class="btn primary" data-book="16/09 · 18:00 · Presencial">Escolher</button></div><div class="card"><span class="tag">Online</span><h3>Quinta · 17/09</h3><p>20:00</p><button class="btn primary" data-book="17/09 · 20:00 · Online">Escolher</button></div></div></div></section>
 
-  <section class="view" id="usuario">
-    <div class="wrap">
-      <div class="back"><button class="btn" data-route="home">← Home</button></div>
-      <div class="section-head"><h1>Área do usuário</h1><p class="muted">Visão demonstrativa da experiência após a entrada no serviço.</p></div>
-      <div class="kpis">
-        <div class="card kpi"><span class="muted">Próxima aula</span><strong>15/09</strong><span>19:00 · Online</span></div>
-        <div class="card kpi"><span class="muted">Plano</span><strong>Essencial</strong><span>Ativo</span></div>
-        <div class="card kpi"><span class="muted">Progresso</span><strong>68%</strong><span>Trilha atual</span></div>
-      </div>
-      <div class="grid">
-        <div class="card"><h3>Próximas aulas</h3><p>15/09 · 19:00 — Aula individual</p><p>22/09 · 19:00 — Aula individual</p></div>
-        <div class="card"><h3>Materiais</h3><p>🎥 Fundamentos de ritmo</p><p>📄 Exercício semanal — prática musical</p></div>
-        <div class="card"><h3>Próximo passo</h3><p>Concluir a prática semanal e registrar dúvidas para a próxima aula.</p></div>
-      </div>
-    </div>
-  </section>
+<section class="view" id="confirmacao"><div class="wrap"><div class="progress"><span class="step done"></span><span class="step done"></span><span class="step done"></span><span class="step done"></span><span class="step current"></span><span class="step-label">5/5 · Confirmação</span></div><div class="section-head"><h1>Está tudo certo</h1><p class="muted">Revise a escolha antes de entrar na Área do aluno.</p></div><div class="card"><div class="summary"><span class="muted">Serviço</span><strong id="confirmService">—</strong></div><div class="summary"><span class="muted">Horário</span><strong id="confirmSlot">—</strong></div><div class="summary"><span class="muted">Nome</span><strong id="confirmName">—</strong></div><div class="actions"><button class="btn" data-route="agendamento">Alterar horário</button><button class="btn primary" data-route="usuario">Confirmar e entrar na Área do aluno →</button></div></div></div></section>
 
-  <section class="view" id="educador">
-    <div class="wrap">
-      <div class="back"><button class="btn" data-route="home">← Home</button></div>
-      <div class="section-head"><h1>Painel do educador</h1><p class="muted">Visão operacional inicial baseada nos dados fictícios do protótipo.</p></div>
-      <div class="kpis">
-        <div class="card kpi"><span class="muted">Alunos ativos</span><strong>2</strong></div>
-        <div class="card kpi"><span class="muted">Experimentais</span><strong>1</strong></div>
-        <div class="card kpi"><span class="muted">Aulas agendadas</span><strong>2</strong></div>
-        <div class="card kpi"><span class="muted">Conteúdos</span><strong>2</strong></div>
-      </div>
-      <div class="card">
-        <h3>Agenda próxima</h3>
-        <table class="table"><thead><tr><th>Data</th><th>Aluno</th><th>Tipo</th><th>Status</th></tr></thead><tbody>
-          <tr><td>15/09 · 19:00</td><td>Ana Martins</td><td>Aula</td><td>Agendada</td></tr>
-          <tr><td>16/09 · 18:00</td><td>Bruno Costa</td><td>Aula experimental</td><td>Pendente</td></tr>
-        </tbody></table>
-      </div>
-      <div class="grid" style="margin-top:16px">
-        <div class="card"><h3>Alunos</h3><p>Organizar situação, serviço e modalidade.</p></div>
-        <div class="card"><h3>Serviços</h3><p>Gerenciar planos, preços e condições.</p></div>
-        <div class="card"><h3>Indicadores</h3><p>Começar simples: interessados, conversão, aulas e retenção.</p></div>
-      </div>
-    </div>
-  </section>
+<section class="view" id="usuario"><div class="wrap"><div class="back"><button class="btn" data-route="home">← Home</button></div><div class="section-head"><div class="eyebrow" style="color:var(--accent)">Área do aluno</div><h1>Olá, Marina.</h1><p class="muted">Aqui está o que importa para o seu próximo passo.</p></div><div class="kpis"><div class="card kpi"><span class="muted">Próxima aula</span><strong id="userSlot">15/09</strong><span id="userSlotDetail">19:00 · Online</span></div><div class="card kpi"><span class="muted">Plano</span><strong id="userService">Essencial</strong><span>Ativo</span></div><div class="card kpi"><span class="muted">Progresso</span><strong>68%</strong><span>Trilha atual</span></div></div><div class="grid"><div class="card"><h3>Próximas aulas</h3><p id="nextClass">15/09 · 19:00 — Aula individual</p><p>22/09 · 19:00 — Aula individual</p></div><div class="card"><h3>Materiais</h3><p>🎥 Fundamentos de ritmo</p><p>📄 Exercício semanal — prática musical</p></div><div class="card"><h3>Seu próximo passo</h3><p>Concluir a prática semanal e registrar dúvidas para a próxima aula.</p><button class="btn" type="button" id="feedbackBtn">Marcar como visto</button><div id="feedback" class="notice ok" style="margin-top:12px">Registrado. Você pode continuar quando quiser.</div></div></div></div></section>
+
+<section class="view" id="educador"><div class="wrap"><div class="back"><button class="btn" data-route="home">← Home</button></div><div class="section-head"><h1>Painel do educador</h1><p class="muted">Este é o próximo ciclo do protótipo, depois da validação da jornada do aluno.</p></div><div class="kpis"><div class="card kpi"><span class="muted">Alunos ativos</span><strong>2</strong></div><div class="card kpi"><span class="muted">Experimentais</span><strong>1</strong></div><div class="card kpi"><span class="muted">Aulas</span><strong>2</strong></div><div class="card kpi"><span class="muted">Conteúdos</span><strong>2</strong></div></div><div class="card"><h3>Agenda próxima</h3><table class="table"><thead><tr><th>Data</th><th>Aluno</th><th>Tipo</th><th>Status</th></tr></thead><tbody><tr><td>15/09 · 19:00</td><td>Ana Martins</td><td>Aula</td><td>Agendada</td></tr><tr><td>16/09 · 18:00</td><td>Bruno Costa</td><td>Aula experimental</td><td>Pendente</td></tr></tbody></table></div></div></section>
 </main>
-
-<footer><div class="wrap">Protótipo público para estudo e validação. Dados demonstrativos/fictícios; não utilizar dados pessoais reais.</div></footer>
-
+<footer><div class="wrap">Protótipo público para estudo e validação. Todos os dados apresentados são fictícios.</div></footer>
 <script>
-  const views = [...document.querySelectorAll('.view')];
-  const navButtons = [...document.querySelectorAll('[data-route]')];
-  let selectedService = '';
-
-  function go(route) {
-    const target = document.getElementById(route) ? route : 'home';
-    views.forEach(v => v.classList.toggle('active', v.id === target));
-    navButtons.forEach(b => b.classList.toggle('active', b.dataset.route === target));
-    history.replaceState(null, '', '#' + target);
-    window.scrollTo({top:0, behavior:'smooth'});
-  }
-
-  navButtons.forEach(btn => btn.addEventListener('click', () => {
-    if (btn.dataset.service) {
-      selectedService = btn.dataset.service;
-      const select = document.querySelector('select[name="interesse"]');
-      if (select) select.value = selectedService;
-    }
-    go(btn.dataset.route);
-  }));
-
-  document.querySelectorAll('[data-book]').forEach(btn => btn.addEventListener('click', () => {
-    document.getElementById('agendaNotice').classList.add('show');
-    setTimeout(() => go('usuario'), 700);
-  }));
-
-  document.getElementById('cadastroForm').addEventListener('submit', e => {
-    e.preventDefault();
-    document.getElementById('cadastroNotice').classList.add('show');
-    setTimeout(() => go('agendamento'), 650);
-  });
-
-  window.addEventListener('popstate', () => go(location.hash.slice(1) || 'home'));
-  go(location.hash.slice(1) || 'home');
+const state={service:"Plano Essencial",name:"Marina",slot:"15/09 · 19:00 · Online"};
+const routes=["home","servicos","cadastro","agendamento","confirmacao","usuario","educador"];
+function route(name){routes.forEach(r=>document.getElementById(r)?.classList.toggle("active",r===name));document.querySelectorAll("[data-route]").forEach(el=>el.classList.toggle("active",el.dataset.route===name));window.location.hash=name;window.scrollTo({top:0,behavior:"smooth"});if(name==="cadastro")document.getElementById("selectedService").textContent=state.service;if(name==="confirmacao"){document.getElementById("confirmService").textContent=state.service;document.getElementById("confirmSlot").textContent=state.slot;document.getElementById("confirmName").textContent=state.name}if(name==="usuario"){document.getElementById("userService").textContent=state.service.replace("Plano ","");document.getElementById("userSlot").textContent=state.slot.split(" · ")[0];document.getElementById("userSlotDetail").textContent=state.slot.split(" · ").slice(1).join(" · ");document.getElementById("nextClass").textContent=state.slot+" — Aula"}}
+document.addEventListener("click",e=>{const routeEl=e.target.closest("[data-route]");if(routeEl){e.preventDefault();if(routeEl.dataset.service)state.service=routeEl.dataset.service;route(routeEl.dataset.route);return}const book=e.target.closest("[data-book]");if(book){state.slot=book.dataset.book;const n=document.getElementById("agendaNotice");n.className="notice ok show";n.textContent="Horário escolhido. Você pode revisar os dados antes de confirmar.";route("confirmacao");return}if(e.target.id==="feedbackBtn"){document.getElementById("feedback").classList.add("show");e.target.disabled=true;e.target.textContent="Visto ✓"}});
+document.getElementById("cadastroForm").addEventListener("submit",e=>{e.preventDefault();const f=new FormData(e.target);state.name=f.get("nome")||"Marina";const n=document.getElementById("cadastroNotice");n.className="notice ok show";n.textContent="Dados registrados na simulação. Agora escolha um horário.";setTimeout(()=>route("agendamento"),350)});
+const initial=location.hash.replace("#","");route(routes.includes(initial)?initial:"home");
 </script>
-</body>
-</html>
+</body></html>
