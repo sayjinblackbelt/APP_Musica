@@ -1,0 +1,69 @@
+{
+  "students": [
+    {
+      "id": "STU-001",
+      "name": "Ana Martins",
+      "status": "active",
+      "service": "Aula particular",
+      "modality": "online"
+    },
+    {
+      "id": "STU-002",
+      "name": "Bruno Costa",
+      "status": "trial",
+      "service": "Aula de violão",
+      "modality": "presencial"
+    },
+    {
+      "id": "STU-003",
+      "name": "Carla Mendes",
+      "status": "active",
+      "service": "Aula de canto",
+      "modality": "presencial"
+    }
+  ],
+  "appointments": [
+    {
+      "id": "APT-001",
+      "studentId": "STU-001",
+      "date": "2026-09-15",
+      "time": "19:00",
+      "type": "Aula",
+      "status": "scheduled"
+    },
+    {
+      "id": "APT-002",
+      "studentId": "STU-002",
+      "date": "2026-09-16",
+      "time": "18:00",
+      "type": "Aula experimental",
+      "status": "pending"
+    }
+  ],
+  "plans": [
+    {
+      "id": "PLAN-001",
+      "name": "Plano Essencial",
+      "description": "Aulas individuais com apoio de materiais digitais."
+    },
+    {
+      "id": "PLAN-002",
+      "name": "Plano Online",
+      "description": "Aulas on-line e acesso à biblioteca de conteúdos."
+    }
+  ],
+  "content": [
+    {
+      "id": "CNT-001",
+      "title": "Fundamentos de ritmo",
+      "type": "video",
+      "access": "students"
+    },
+    {
+      "id": "CNT-002",
+      "title": "Exercício semanal — prática musical",
+      "type": "material",
+      "access": "students"
+    }
+  ]
+}
