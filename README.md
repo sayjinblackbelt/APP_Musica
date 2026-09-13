@@ -4,6 +4,17 @@
 
 > Protótipo de um ecossistema digital para divulgação, captação, atendimento, agendamento, aulas, conteúdos e gestão de serviços de educação musical.
 
+## 🌐 Protótipo navegável
+
+**[▶️ Acessar o protótipo publicado no GitHub Pages](https://sayjinblackbelt.github.io/APP_Musica/)**
+
+O protótipo apresenta duas experiências principais:
+
+- 🎵 **Usuário / Aluno** — acompanhamento de aulas, agenda, materiais e progresso.
+- 🎓 **Professor / ADM** — visão de alunos, agenda, acompanhamento, materiais e indicadores.
+
+Os dados apresentados são fictícios e o protótipo tem finalidade de validação de experiência, não de operação real.
+
 ## 🎯 Sobre este repositório
 
 Este repositório documenta a concepção, prototipagem e evolução de uma plataforma digital voltada à educação musical.
