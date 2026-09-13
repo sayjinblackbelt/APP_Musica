@@ -1,30 +1,34 @@
-# Protótipo navegável — Jornada do aluno
+# Protótipo navegável — Experiência do usuário/aluno
 
 ## Objetivo
 
-Validar a experiência principal do aluno antes da definição da arquitetura tecnológica.
+Validar a experiência principal do usuário/aluno e a proposta de valor do produto antes da definição da arquitetura tecnológica.
 
-## Fluxo prioritário
+## Experiência atual
 
-**Home → Serviços/Planos → Cadastro → Agendamento → Confirmação → Área do aluno**
+O protótipo foi simplificado para representar duas áreas principais:
+
+**🎵 Usuário / Aluno** → próxima aula → agenda → materiais → plano → progresso
+
+A experiência atual não pretende simular ainda todo o processo operacional de cadastro e agendamento. O foco é verificar se a proposta de uma área central de acompanhamento faz sentido para o usuário.
 
 ## Critérios UX
 
-- O próximo passo deve ser evidente.
-- O usuário deve entender o serviço antes de escolher.
-- O cadastro deve pedir somente o necessário para a simulação.
-- A agenda deve apresentar opções simples e compreensíveis.
-- A área do aluno deve destacar a próxima aula e os próximos passos.
-- A experiência deve funcionar bem em telas pequenas.
+- O usuário deve entender rapidamente onde está e o que pode fazer.
+- A próxima aula deve ser uma informação prioritária.
+- Agenda, materiais, plano e progresso devem ser localizáveis sem sobrecarga.
+- A interface deve funcionar bem em telas pequenas.
+- A experiência deve comunicar claramente que os dados são fictícios/simulados.
 
 ## Critérios IX
 
 - Toda ação principal deve produzir feedback perceptível.
-- Estados de sucesso, erro, indisponibilidade e retorno devem ser previstos.
-- Voltar ou trocar uma escolha não deve fazer o usuário perder contexto sem aviso.
-- Botões e elementos interativos devem ter comportamento consistente.
-- A interface deve deixar claro quando uma ação é apenas simulada.
+- Estados de sucesso, erro, indisponibilidade e retorno devem ser previstos para futuras implementações.
+- Elementos interativos devem ter comportamento consistente.
+- O protótipo deve diferenciar claramente visualização de operação real.
 
 ## Regra de validação
 
-Não avançar para o painel do professor enquanto a jornada principal do aluno não estiver suficientemente clara e fluida.
+A experiência do aluno deve ser considerada suficientemente clara antes de transformar as telas em funcionalidades reais.
+
+Após essa validação, o próximo ciclo é a definição da experiência do **Professor / ADM**.
