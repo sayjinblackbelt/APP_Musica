@@ -4,11 +4,11 @@
 
 **Etapa 5 — Protótipo visual navegável**
 
-### Ciclo concluído
+### Ciclo A concluído
 
 **Ciclo A — Experiência do usuário/aluno**
 
-O protótipo foi simplificado e revisado para concentrar a experiência em uma área de acompanhamento do aluno, com:
+A experiência do aluno foi revisada para concentrar a jornada em:
 
 - próxima aula;
 - agenda;
@@ -16,18 +16,48 @@ O protótipo foi simplificado e revisado para concentrar a experiência em uma �
 - plano;
 - progresso.
 
-A versão atual é propositalmente simulada e utiliza dados fictícios. O objetivo é validar a proposta de experiência antes de transformar os elementos em funcionalidades reais.
+Os dados permanecem fictícios e a operação é simulada.
 
-### Critério de passagem
+### Ciclo B — Professor / ADM
 
-A experiência do aluno deve ser suficientemente clara para permitir a avaliação da proposta geral do produto.
+O primeiro fluxo do Professor / ADM foi implementado e está em validação visual e de navegação:
 
-### Próximo ciclo
+**Dashboard → Alunos → Perfil do aluno**
 
-**Ciclo B — Experiência do Professor / ADM**
+O Dashboard agora apresenta:
 
-Fluxo inicial a validar:
+- indicadores principais;
+- próximas aulas do dia;
+- distribuição de alunos por instrumento;
+- lista de alunos;
+- filtros por instrumento;
+- acesso direto ao perfil individual;
+- ações complementares para agenda, materiais e indicadores.
 
-**Dashboard → Alunos → Agenda → Aula → Evolução → Materiais**
+O perfil individual apresenta:
 
-O painel do Professor / ADM será especificado primeiro em termos de jornada, informações e decisões do usuário. A implementação funcional somente deve ocorrer após essa validação.
+- identificação e status do aluno;
+- resumo de evolução;
+- objetivos;
+- próximas ações;
+- histórico recente;
+- observações do professor;
+- feedback de ações simuladas.
+
+### Critério de passagem do ciclo B
+
+Validar se o professor consegue, sem explicação externa:
+
+1. entender a situação geral;
+2. identificar o que merece atenção;
+3. localizar um aluno;
+4. abrir o contexto individual;
+5. compreender o próximo passo.
+
+### Próxima etapa
+
+Depois da validação do Dashboard e do Perfil do aluno, seguir para:
+
+**Agenda → Aula → Evolução → Materiais**
+
+Somente após a jornada estar suficientemente clara devem ser consideradas integrações, autenticação, banco de dados ou automações reais.
