@@ -2,49 +2,55 @@
 
 ## Contexto
 
-O professor Obel atua com aulas de música em diferentes formatos, incluindo atividades na OSC, aulas particulares e aulas on-line. O projeto nasce da necessidade de estruturar uma presença digital profissional e, ao mesmo tempo, organizar a jornada do aluno e a operação do professor.
+O projeto investiga a criação de uma plataforma digital para um educador musical que atua em diferentes formatos, incluindo aulas presenciais, particulares e on-line.
+
+A proposta combina presença digital, captação, atendimento, agenda, aprendizagem e gestão em um ecossistema progressivo.
 
 ## Visão
 
-Criar um ecossistema digital de educação musical que conecte divulgação, captação, atendimento, agendamento, aulas, materiais, conteúdos e novos serviços em uma experiência única.
+Criar um ecossistema digital de educação musical que conecte divulgação, relacionamento, contratação, agendamento, aulas, materiais, conteúdos e novos serviços em uma experiência integrada.
 
 ## Problema a investigar
 
-Hoje, diferentes etapas da jornada podem depender de ferramentas separadas e processos manuais. O protótipo deve investigar como reduzir essa fragmentação sem criar complexidade desnecessária.
+Diferentes etapas da jornada podem depender de ferramentas separadas e processos manuais. O protótipo deve investigar como reduzir essa fragmentação sem criar complexidade desnecessária para o educador ou para o aluno.
 
 ## Hipótese de valor
 
-Uma plataforma simples, centrada no aluno e integrada à rotina do professor pode melhorar a experiência de contratação e aprendizagem, reduzir tarefas administrativas e abrir espaço para novos produtos e fontes de receita.
+Uma experiência digital simples e integrada pode melhorar a jornada do aluno, reduzir tarefas administrativas, organizar a operação do educador e criar novas possibilidades de produtos e serviços.
 
 ## Escopo inicial
 
-### Público
+### Públicos
+
 - interessados em aprender música;
 - alunos presenciais;
 - alunos particulares;
 - alunos on-line;
-- possíveis clientes de consultorias e produtos digitais.
+- clientes de conteúdos e produtos digitais;
+- possíveis clientes de consultorias.
 
 ### Jornada principal
 
-Descoberta → Cadastro → Atendimento → Escolha do serviço → Agendamento → Aula → Materiais/Conteúdos → Acompanhamento → Renovação/novo serviço
+**Descoberta → Cadastro → Atendimento → Escolha do serviço → Agendamento → Aula → Materiais/Conteúdos → Acompanhamento → Renovação/novo serviço**
 
 ## Diretrizes
 
-1. Começar com protótipo e validação antes de escolher uma arquitetura definitiva.
-2. Usar somente dados fictícios/sanitizados no desenvolvimento inicial.
+1. Começar pelo protótipo e pela validação antes de escolher uma arquitetura definitiva.
+2. Utilizar somente dados fictícios/sanitizados durante a fase pública de desenvolvimento.
 3. Priorizar web responsiva antes de investir em aplicativo nativo.
-4. Evitar dependência prematura de uma única ferramenta.
+4. Evitar dependência prematura de uma única ferramenta ou fornecedor.
 5. Projetar integrações como módulos substituíveis.
+6. Priorizar simplicidade operacional e experiência do usuário.
+7. Construir o MVP a partir dos fluxos realmente validados.
 
-## Possíveis módulos futuros
+## Possíveis módulos
 
 - landing page institucional;
-- catálogo de aulas e planos;
+- catálogo de aulas, serviços e planos;
 - formulário de interesse;
 - CRM simples de leads e alunos;
 - agenda;
-- área do aluno;
+- área do usuário;
 - biblioteca de vídeos;
 - materiais didáticos;
 - aulas on-line;
@@ -52,7 +58,7 @@ Descoberta → Cadastro → Atendimento → Escolha do serviço → Agendamento 
 - automações de comunicação;
 - métricas e relatórios;
 - consultorias;
-- aplicativo/PWA.
+- PWA/aplicativo.
 
 ## Fora do escopo da primeira validação
 
