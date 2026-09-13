@@ -1,5 +1,7 @@
 # 🎵 Plataforma Digital de Educação Musical — Protótipo
 
+![APP Música — identidade pixel art](assets/app-musica-logo-pixel.svg)
+
 🇧🇷 Português | [🇺🇸 English](README.en.md) | [🇪🇸 Español](README.es.md)
 
 > Protótipo de um ecossistema digital para divulgação, captação, atendimento, agendamento, aulas, conteúdos e gestão de serviços de educação musical.
@@ -14,6 +16,16 @@ O protótipo apresenta duas experiências principais:
 - 🎓 **Professor / ADM** — visão de alunos, agenda, acompanhamento, materiais e indicadores.
 
 Os dados apresentados são fictícios e o protótipo tem finalidade de validação de experiência, não de operação real.
+
+## 🎨 Identidade visual
+
+O projeto utiliza uma identidade **pixel art autoral** como assinatura visual, mantendo a interface principal em linguagem moderna e funcional.
+
+- Logo: `assets/app-musica-logo-pixel.svg`
+- Ícone: `assets/app-musica-icon.svg`
+- Aplicação: interface, materiais, favicon/PWA e peças de divulgação, conforme viabilidade.
+
+A identidade completa está documentada em `docs/14-identidade-visual-pixel-art.md`.
 
 ## 🎯 Sobre este repositório
 
@@ -58,6 +70,7 @@ O projeto será desenvolvido de forma incremental:
 ├── 03_Sprints/             # ciclos de prototipagem e desenvolvimento
 ├── 04_Materiais_Educador/  # materiais e referências para operação
 ├── 05_Materiais_Usuarios/  # materiais e conteúdos da experiência do usuário
+├── assets/                 # identidade visual e materiais visuais
 ├── data/                   # dados fictícios/sanitizados
 ├── docs/                   # documentos técnicos e sínteses
 └── index.html              # protótipo publicado no GitHub Pages
