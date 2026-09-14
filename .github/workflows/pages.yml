@@ -31,8 +31,6 @@ jobs:
           from pathlib import Path
           p = Path('index.html')
           html = p.read_text(encoding='utf-8')
-
-          # Commercial visual layer: Ukulele, Violão and Linguagem Musical.
           commercial_css = r'''
           /* Comercial */
           .commercial-hero{background:linear-gradient(135deg,#071522,#12324e);color:#fff;border-radius:22px;padding:28px;margin-bottom:18px}
@@ -54,106 +52,37 @@ jobs:
           @media(max-width:850px){.commercial-grid,.commercial-plan{grid-template-columns:1fr}.commercial-list{grid-template-columns:1fr}}
           @media(max-width:640px){.commercial-hero{padding:21px}.commercial-card{min-height:auto}}
           '''
-          style_marker = '</style>'
-          if '/* Comercial */' not in html:
-              html = html.replace(style_marker, commercial_css + style_marker, 1)
-
+          if '/* Comercial */' not in html: html = html.replace('</style>', commercial_css + '</style>', 1)
           commercial_html = r'''
-          <section id="view-comercial" class="view">
-            <div class="wrap section">
-              <div class="commercial-hero">
-                <div class="eyebrow">VERSÃO COMERCIAL</div>
-                <h1>Uma jornada musical de 3 meses.</h1>
-                <p>Conteúdo em vídeo, materiais de apoio, evolução acompanhada e uma aula individual ao vivo por mês para orientar o aluno com proximidade.</p>
-                <div class="commercial-cta"><button class="orange" data-interest="comercial">Tenho interesse</button><span class="commercial-note" style="color:#c9d6e1">Protótipo comercial — valores finais ainda em definição.</span></div>
-              </div>
-
-              <div class="commercial-grid">
-                <article class="commercial-card selected">
-                  <div class="commercial-icon">🪕</div><h2>Ukulele</h2><p>Aprendizado progressivo do instrumento, com prática orientada e repertório.</p>
-                  <ul><li>Aulas em vídeo</li><li>Material de apoio</li><li>Evolução por habilidades</li></ul>
-                  <button class="orange" data-interest="ukulele">Conhecer</button>
-                </article>
-                <article class="commercial-card">
-                  <div class="commercial-icon">🎸</div><h2>Violão</h2><p>Do fundamento ao repertório, conectando técnica, ritmo, acordes e musicalidade.</p>
-                  <ul><li>Aulas em vídeo</li><li>Material de apoio</li><li>Prática orientada</li></ul>
-                  <button class="orange" data-interest="violao">Conhecer</button>
-                </article>
-                <article class="commercial-card">
-                  <div class="commercial-icon">🎼</div><h2>Linguagem Musical</h2><p>Base musical organizada em duas frentes complementares.</p>
-                  <div class="language-tabs" role="tablist"><button class="active" data-lang-tab="ritmica">Rítmica</button><button data-lang-tab="solfejo">Solfejo</button></div>
-                  <div class="language-panel active" data-lang-panel="ritmica"><strong>Rítmica</strong><p>Leitura e percepção do pulso, subdivisões, compassos e exercícios rítmicos.</p></div>
-                  <div class="language-panel" data-lang-panel="solfejo"><strong>Solfejo</strong><p>Leitura melódica, percepção das alturas e desenvolvimento da voz musical.</p></div>
-                  <button class="orange" data-interest="linguagem-musical">Conhecer</button>
-                </article>
-              </div>
-
-              <div class="commercial-plan">
-                <div class="panel">
-                  <h2>Plano de 3 meses</h2>
-                  <p class="muted">A proposta comercial é um ciclo de aprendizagem, não apenas uma aula avulsa.</p>
-                  <div class="commercial-list">
-                    <div>🎥 <strong>Aulas em vídeo</strong></div><div>📚 <strong>Material de apoio</strong></div>
-                    <div>📈 <strong>Acompanhamento</strong></div><div>🎓 <strong>3 aulas individuais</strong></div>
-                  </div>
-                  <p class="commercial-note">Uma aula ao vivo por mês durante o ciclo de 3 meses.</p>
-                </div>
-                <div class="commercial-live">
-                  <span>Aula individual ao vivo</span>
-                  <strong>45 minutos</strong>
-                  <span>1 encontro por mês · comercializado como 1 hora-aula</span>
-                  <div class="commercial-cta"><button class="orange" data-interest="plano-3-meses">Consultar plano</button></div>
-                </div>
-              </div>
-              <div id="commercialNotice" class="notice">Interesse registrado nesta demonstração. Próxima etapa: definir valor da hora-aula e fluxo real de contratação.</div>
-            </div>
-          </section>
+          <section id="view-comercial" class="view"><div class="wrap section"><div class="commercial-hero"><div class="eyebrow">VERSÃO COMERCIAL</div><h1>Uma jornada musical de 3 meses.</h1><p>Conteúdo em vídeo, materiais de apoio, evolução acompanhada e uma aula individual ao vivo por mês para orientar o aluno com proximidade.</p><div class="commercial-cta"><button class="orange" data-interest="comercial">Tenho interesse</button><span class="commercial-note" style="color:#c9d6e1">Protótipo comercial — valores finais ainda em definição.</span></div></div><div class="commercial-grid"><article class="commercial-card selected"><div class="commercial-icon">🪕</div><h2>Ukulele</h2><p>Aprendizado progressivo do instrumento, com prática orientada e repertório.</p><ul><li>Aulas em vídeo</li><li>Material de apoio</li><li>Evolução por habilidades</li></ul><button class="orange" data-interest="ukulele">Conhecer</button></article><article class="commercial-card"><div class="commercial-icon">🎸</div><h2>Violão</h2><p>Do fundamento ao repertório, conectando técnica, ritmo, acordes e musicalidade.</p><ul><li>Aulas em vídeo</li><li>Material de apoio</li><li>Prática orientada</li></ul><button class="orange" data-interest="violao">Conhecer</button></article><article class="commercial-card"><div class="commercial-icon">🎼</div><h2>Linguagem Musical</h2><p>Base musical organizada em duas frentes complementares.</p><div class="language-tabs"><button class="active" data-lang-tab="ritmica">Rítmica</button><button data-lang-tab="solfejo">Solfejo</button></div><div class="language-panel active" data-lang-panel="ritmica"><strong>Rítmica</strong><p>Leitura e percepção do pulso, subdivisões, compassos e exercícios rítmicos.</p></div><div class="language-panel" data-lang-panel="solfejo"><strong>Solfejo</strong><p>Leitura melódica, percepção das alturas e desenvolvimento da voz musical.</p></div><button class="orange" data-interest="linguagem-musical">Conhecer</button></article></div><div class="commercial-plan"><div class="panel"><h2>Plano de 3 meses</h2><p class="muted">A proposta comercial é um ciclo de aprendizagem, não apenas uma aula avulsa.</p><div class="commercial-list"><div>🎥 <strong>Aulas em vídeo</strong></div><div>📚 <strong>Material de apoio</strong></div><div>📈 <strong>Acompanhamento</strong></div><div>🎓 <strong>3 aulas individuais</strong></div></div><p class="commercial-note">Uma aula ao vivo por mês durante o ciclo de 3 meses.</p></div><div class="commercial-live"><span>Aula individual ao vivo</span><strong>45 minutos</strong><span>1 encontro por mês · comercializado como 1 hora-aula</span><div class="commercial-cta"><button class="orange" data-interest="plano-3-meses">Consultar plano</button></div></div></div><div id="commercialNotice" class="notice">Interesse registrado nesta demonstração. Próxima etapa: definir valor da hora-aula e fluxo real de contratação.</div></div></section>
           '''
-          if 'id="view-comercial"' not in html:
-              html = html.replace('</main>', commercial_html + '</main>', 1)
-
-          # Add commercial entry to the main navigation without changing the existing routes.
-          nav_anchor = '<div class="navlinks">'
-          nav_button = '<button data-route="comercial">Comercial</button>'
-          if nav_button not in html and nav_anchor in html:
-              html = html.replace(nav_anchor, nav_anchor + nav_button, 1)
-
-          commercial_js = r'''
-          /* Commercial interactions */
-          document.querySelectorAll('[data-lang-tab]').forEach(function(btn){
-            btn.addEventListener('click',function(){
-              var key=this.getAttribute('data-lang-tab');
-              document.querySelectorAll('[data-lang-tab]').forEach(function(b){b.classList.toggle('active',b===btn)});
-              document.querySelectorAll('[data-lang-panel]').forEach(function(panel){panel.classList.toggle('active',panel.getAttribute('data-lang-panel')===key)});
-            });
-          });
-          document.querySelectorAll('[data-interest]').forEach(function(btn){
-            btn.addEventListener('click',function(){
-              var notice=document.getElementById('commercialNotice');
-              if(notice) notice.classList.add('show');
-              if(typeof showView==='function') showView('comercial');
-              window.scrollTo({top:0,behavior:'smooth'});
-            });
-          });
+          if 'id="view-comercial"' not in html: html = html.replace('</main>', commercial_html + '</main>', 1)
+          nav_anchor='<div class="navlinks">'; nav_button='<button data-route="comercial">Comercial</button>'
+          if nav_button not in html and nav_anchor in html: html=html.replace(nav_anchor,nav_anchor+nav_button,1)
+          commercial_js=r'''
+          document.querySelectorAll('[data-lang-tab]').forEach(function(btn){btn.addEventListener('click',function(){var key=this.getAttribute('data-lang-tab');document.querySelectorAll('[data-lang-tab]').forEach(function(b){b.classList.toggle('active',b===btn)});document.querySelectorAll('[data-lang-panel]').forEach(function(p){p.classList.toggle('active',p.getAttribute('data-lang-panel')===key)})})});
+          document.querySelectorAll('[data-interest]').forEach(function(btn){btn.addEventListener('click',function(){var n=document.getElementById('commercialNotice');if(n)n.classList.add('show');if(typeof showView==='function')showView('comercial');window.scrollTo({top:0,behavior:'smooth'})})});
           '''
-          script_marker = '</script>'
-          if '/* Commercial interactions */' not in html:
-              pos = html.rfind(script_marker)
-              if pos == -1:
-                  raise SystemExit('Script final não encontrado; deploy interrompido.')
-              html = html[:pos] + commercial_js + html[pos:]
-
-          # Keep the existing brand integration intact.
-          old = '<div class="brand"><span class="note">♪</span> APP <b>Música</b></div>'
-          new = '<a class="brand brand-logo" href="#" data-route="home" aria-label="APP Música — Início"><img src="assets/app-musica-logo.svg" alt="APP Música" loading="eager"></a>'
-          if old in html:
-              html = html.replace(old, new, 1)
-          marker = '<meta name="viewport" content="width=device-width,initial-scale=1">'
-          favicon = '<link rel="icon" type="image/svg+xml" href="favicon.svg">'
-          if favicon not in html:
-              html = html.replace(marker, marker + favicon, 1)
-          html = html.replace('.brand{font-weight:900;font-size:1.25rem;white-space:nowrap}', '.brand{font-weight:900;font-size:1.25rem;white-space:nowrap}.brand-logo{display:flex;align-items:center;text-decoration:none}.brand-logo img{display:block;width:118px;height:48px;object-fit:cover;object-position:center;border-radius:8px}')
-          p.write_text(html, encoding='utf-8')
+          pos=html.rfind('</script>')
+          if pos<0: raise SystemExit('Script final não encontrado.')
+          if 'data-interest' not in html[-5000:]: html=html[:pos]+commercial_js+html[pos:]
+          old='<div class="brand"><span class="note">♪</span> APP <b>Música</b></div>'; new='<a class="brand brand-logo" href="#" data-route="home" aria-label="APP Música — Início"><img src="assets/app-musica-logo.svg" alt="APP Música" loading="eager"></a>'
+          if old in html: html=html.replace(old,new,1)
+          marker='<meta name="viewport" content="width=device-width,initial-scale=1">'; favicon='<link rel="icon" type="image/svg+xml" href="favicon.svg">'
+          if favicon not in html: html=html.replace(marker,marker+favicon,1)
+          html=html.replace('.brand{font-weight:900;font-size:1.25rem;white-space:nowrap}', '.brand{font-weight:900;font-size:1.25rem;white-space:nowrap}.brand-logo{display:flex;align-items:center;text-decoration:none}.brand-logo img{display:block;width:118px;height:48px;object-fit:cover;object-position:center;border-radius:8px}')
+          p.write_text(html,encoding='utf-8')
+      - name: Integrate shared commercial journey
+        shell: python
+        run: |
+          from pathlib import Path
+          script='<script src="assets/jornada-comercial.js"></script>'
+          for name in ['comercial.html','aluno.html','agendamento.html']:
+              p=Path(name)
+              html=p.read_text(encoding='utf-8')
+              if script not in html:
+                  html=html.replace('</body>',script+'</body>',1)
+                  p.write_text(html,encoding='utf-8')
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
