@@ -1,0 +1,43 @@
+{
+  "version": "comercial-inicial",
+  "cycleMonths": 3,
+  "liveLesson": {
+    "format": "individual",
+    "durationMinutes": 45,
+    "billingUnit": "1 hora-aula",
+    "frequency": "1 por mês",
+    "sessionsPerCycle": 3
+  },
+  "included": [
+    "Aulas em vídeo",
+    "Materiais de apoio",
+    "Acompanhamento da evolução",
+    "1 aula individual ao vivo por mês"
+  ],
+  "learningPaths": [
+    {
+      "id": "ukulele",
+      "name": "Ukulele",
+      "type": "instrument"
+    },
+    {
+      "id": "violao",
+      "name": "Violão",
+      "type": "instrument"
+    },
+    {
+      "id": "linguagem-musical",
+      "name": "Linguagem Musical",
+      "type": "theory",
+      "tabs": ["Rítmica", "Solfejo"]
+    }
+  ],
+  "pricing": {
+    "status": "a definir",
+    "basis": "valor da hora-aula"
+  },
+  "payments": {
+    "status": "futuro",
+    "methods": ["PIX", "Cartão", "Carteiras digitais"]
+  }
+}
