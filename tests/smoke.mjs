@@ -52,7 +52,6 @@ try {
   await page.getByRole('button', { name: 'Salvar disponibilidade' }).click();
   const availability = await page.evaluate(() => JSON.parse(localStorage.getItem('appMusicaMultiProfessor')));
   assert(availability?.['prof-a']?.['2-3'] === 'available', 'Disponibilidade de quarta 15:00 não foi salva.');
-  assert(availability?.['0-2'] === undefined || true, '');
 
   // 6. Conversão → plano → pagamento demonstrativo → assinatura.
   await open('comercial.html');
@@ -69,10 +68,12 @@ try {
   assert((await page.locator('#journeyStudentStatus').textContent()).includes('Assinatura ativa'), 'Área do aluno não reconheceu a assinatura.');
   assert((await page.locator('aside .card:nth-child(2)').textContent()).includes(booking.time), 'Próxima aula reservada não apareceu no aluno.');
 
-  // 8. Linguagem Musical mantém as duas frentes.
+  // 8. Linguagem Musical mantém Rítmica e Solfejo em abas.
   await open('comercial.html');
-  await page.locator('[data-lang-tab="solfejo"]').click();
-  assert(await page.locator('[data-lang-panel="solfejo"].active').count() === 1, 'Aba Solfejo não foi ativada.');
+  assert(await page.locator('[data-journey-lang="ritmica"]').count() === 1, 'Aba Rítmica não foi criada.');
+  assert(await page.locator('[data-journey-lang="solfejo"]').count() === 1, 'Aba Solfejo não foi criada.');
+  await page.locator('[data-journey-lang="solfejo"]').click();
+  assert(await page.locator('[data-journey-panel="solfejo"]').isVisible(), 'Painel de Solfejo não foi ativado.');
 
   // 9. Smoke responsivo: nenhuma página principal pode ultrapassar o viewport horizontalmente.
   for (const path of ['comercial.html', 'aluno.html', 'professor.html', 'agendamento.html?view=aluno', 'gestao.html']) {
