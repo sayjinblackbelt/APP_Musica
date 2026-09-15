@@ -83,6 +83,20 @@ jobs:
               if script not in html:
                   html=html.replace('</body>',script+'</body>',1)
                   p.write_text(html,encoding='utf-8')
+      - name: Integrate NEXA visual system
+        shell: python
+        run: |
+          from pathlib import Path
+          link='<link rel="stylesheet" href="assets/nexa-app-musica.css">'
+          pages=['index.html','comercial.html','aluno.html','professor.html','agendamento.html','gestao.html']
+          for name in pages:
+              p=Path(name)
+              if not p.exists():
+                  continue
+              html=p.read_text(encoding='utf-8')
+              if link not in html:
+                  html=html.replace('</head>',link+'</head>',1)
+                  p.write_text(html,encoding='utf-8')
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
