@@ -46,13 +46,18 @@ try {
   await open('professor.html');
   assert(await page.locator('#journeyProfessorBooking').count() === 1, 'Reserva não apareceu na área do professor.');
 
-  // 5. Professor consegue trabalhar com disponibilidade.
+  // 5. Professor consegue alterar e salvar disponibilidade.
   const initialAvailable = await page.locator('#count').textContent();
   assert(Number(initialAvailable) >= 1, 'Professor não possui horários livres no estado inicial.');
-  await page.getByRole('button', { name: /Alternar Terça 09:00/ }).click();
+  const tuesday = page.locator('#slots > div').nth(1);
+  const tuesdayFirstToggle = tuesday.locator('button.toggle').first();
+  const before = await tuesdayFirstToggle.getAttribute('class');
+  await tuesdayFirstToggle.click();
   await page.getByRole('button', { name: 'Salvar disponibilidade' }).click();
   const availability = await page.evaluate(() => JSON.parse(localStorage.getItem('appMusicaMultiProfessor')));
-  assert(availability?.['prof-a']?.['1-0'] === 'available', 'Alteração de disponibilidade não foi salva.');
+  const savedTuesday = availability?.['prof-a']?.['1-0'];
+  assert(savedTuesday === 'available' || savedTuesday === 'unavailable', 'Estado de disponibilidade não foi salvo.');
+  assert(savedTuesday !== (before?.includes('on') ? 'available' : 'unavailable'), 'Clique de disponibilidade não alterou o estado.');
 
   // 6. Conversão → plano → pagamento demonstrativo → assinatura.
   await open('comercial.html');
