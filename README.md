@@ -2,6 +2,14 @@
 
 ![APP Música — identidade pixel art](assets/app-musica-logo-pixel.svg)
 
+## 🚀 ACESSAR O PROTÓTIPO
+
+> ### 👉 **[🎵 ABRIR APP MÚSICA NO GITHUB PAGES](https://sayjinblackbelt.github.io/APP_Musica/)**
+>
+> **Aplicação publicada:** `https://sayjinblackbelt.github.io/APP_Musica/`
+>
+> Se o acesso direto não abrir, utilize o endereço acima copiando-o para o navegador e aguarde a conclusão do deploy do GitHub Pages.
+
 🇧🇷 Português | [🇺🇸 English](README.en.md) | [🇪🇸 Español](README.es.md)
 
 > Protótipo de um ecossistema digital para divulgação, captação, atendimento, agendamento, aulas, conteúdos e gestão de serviços de educação musical.
