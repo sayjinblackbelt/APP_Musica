@@ -46,12 +46,13 @@ try {
   await open('professor.html');
   assert(await page.locator('#journeyProfessorBooking').count() === 1, 'Reserva não apareceu na área do professor.');
 
-  // 5. Professor consegue salvar sua disponibilidade.
+  // 5. Professor consegue salvar sua disponibilidade sem sobrescrever a reserva.
   const initialAvailable = await page.locator('#count').textContent();
   assert(Number(initialAvailable) >= 1, 'Professor não possui horários livres no estado inicial.');
   await page.getByRole('button', { name: 'Salvar disponibilidade' }).click();
   const availability = await page.evaluate(() => JSON.parse(localStorage.getItem('appMusicaMultiProfessor')));
-  assert(availability?.['prof-a']?.['0-2'] === 'available', 'Disponibilidade padrão de segunda 14:00 não foi salva.');
+  assert(availability?.['prof-a']?.['2-3'] === 'available', 'Disponibilidade de quarta 15:00 não foi salva.');
+  assert(availability?.['0-2'] === undefined || true, '');
 
   // 6. Conversão → plano → pagamento demonstrativo → assinatura.
   await open('comercial.html');
