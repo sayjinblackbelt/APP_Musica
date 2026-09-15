@@ -51,13 +51,14 @@ try {
   assert(Number(initialAvailable) >= 1, 'Professor não possui horários livres no estado inicial.');
   const tuesday = page.locator('#slots > div').nth(1);
   const tuesdayFirstToggle = tuesday.locator('button.toggle').first();
-  const before = await tuesdayFirstToggle.getAttribute('class');
+  const beforeOn = (await tuesdayFirstToggle.getAttribute('class'))?.includes('on') === true;
   await tuesdayFirstToggle.click();
+  const afterOn = (await tuesday.locator('button.toggle').first().getAttribute('class'))?.includes('on') === true;
+  assert(afterOn !== beforeOn, 'Clique de disponibilidade não alterou o estado visual.');
   await page.getByRole('button', { name: 'Salvar disponibilidade' }).click();
   const availability = await page.evaluate(() => JSON.parse(localStorage.getItem('appMusicaMultiProfessor')));
   const savedTuesday = availability?.['prof-a']?.['1-0'];
-  assert(savedTuesday === 'available' || savedTuesday === 'unavailable', 'Estado de disponibilidade não foi salvo.');
-  assert(savedTuesday !== (before?.includes('on') ? 'available' : 'unavailable'), 'Clique de disponibilidade não alterou o estado.');
+  assert(savedTuesday === (afterOn ? 'available' : 'unavailable'), 'Disponibilidade salva não corresponde ao estado visual.');
 
   // 6. Conversão → plano → pagamento demonstrativo → assinatura.
   await open('comercial.html');
