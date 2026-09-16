@@ -23,7 +23,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--nexa-ink)!important;color:var(--nexa-paper)!important;font-family:'DM Sans',sans-serif!important;overflow-x:hidden}
-body::selection{background:var(--nexa-acid);color:var(--nexa-ink)}
+::selection{background:var(--nexa-acid);color:var(--nexa-ink)}
 a{color:inherit}
 button,input,select,textarea{font-family:'DM Sans',sans-serif}
 
@@ -48,6 +48,13 @@ button,.orange,.cta,.btn,.primary,.secondary,.action,.button{border-radius:0!imp
 }
 .card:hover,.commercial-card:hover,.tool:hover,.feature-card:hover{border-color:var(--nexa-acid)!important}
 
+/* Editorial shell */
+.hero,.commercial-hero{position:relative;overflow:hidden}
+.hero::after,.commercial-hero::after{content:'';position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(242,239,232,.18) 1px,transparent 1px);background-size:5px 5px;opacity:.035}
+.hero::before,.commercial-hero::before{content:'NEXA / MUSIC';position:absolute;right:28px;top:28px;z-index:1;font:700 .58rem/1 'Space Grotesk',sans-serif;letter-spacing:.18em;color:#77736d;writing-mode:vertical-rl}
+.hero h1{font-size:clamp(4rem,9vw,9rem)!important;line-height:.84!important;text-transform:uppercase!important}
+.hero h1 em,.hero h1 span{color:var(--nexa-acid)!important}
+
 .commercial-hero{background:radial-gradient(circle at 80% 20%,rgba(118,87,255,.28),transparent 28%),var(--nexa-ink)!important;border:1px solid #303139!important;border-radius:0!important;box-shadow:none!important;padding:48px!important}
 .commercial-hero h1{font-size:clamp(3rem,7vw,7rem)!important;line-height:.9!important;letter-spacing:-.07em!important;text-transform:uppercase}
 .commercial-hero p{color:#b9b5ad!important}
@@ -67,7 +74,7 @@ button,.orange,.cta,.btn,.primary,.secondary,.action,.button{border-radius:0!imp
 /* Student / teacher / management surfaces */
 .section,.view,.main,.content,.page{background:transparent!important}
 .section{padding-top:110px!important;padding-bottom:110px!important}
-.view .wrap>h1,.view .wrap>h2{font-size:clamp(3rem,7vw,6rem)!important;line-height:.9!important;text-transform:uppercase}
+.view .wrap>h1,.view .wrap>h2{font-size:clamp(3rem,7vw,6rem)!important;line-height:.9!important;text-transform:uppercase!important}
 .notice{background:#15161a!important;border:1px solid #303139!important;border-left:2px solid var(--nexa-acid)!important;color:#aaa!important;border-radius:0!important}
 .progress,.progress-bar,.bar{background:#292a2f!important;border-radius:0!important}
 .progress>span,.progress-bar>span,.bar>span{background:linear-gradient(90deg,var(--nexa-violet),var(--nexa-acid))!important;border-radius:0!important}
@@ -85,23 +92,24 @@ th{font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:#999!impo
 .slot:hover,.time-slot:hover,.calendar-day:hover,.agenda-card:hover{border-color:var(--nexa-acid)!important}
 .slot.selected,.time-slot.selected,.calendar-day.today,.agenda-card.priority{background:#1d1e21!important;border-color:var(--nexa-acid)!important;box-shadow:inset 0 2px 0 var(--nexa-acid)!important}
 
-/* Hero compositions */
-.hero,.commercial-hero{position:relative;overflow:hidden}
-.hero::after,.commercial-hero::after{content:'';position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(242,239,232,.14) 1px,transparent 1px);background-size:5px 5px;opacity:.035}
-.hero h1{font-size:clamp(4rem,9vw,9rem)!important;line-height:.84!important;text-transform:uppercase!important}
-.hero h1 em,.hero h1 span{color:var(--nexa-acid)!important}
-
 /* Conceptual music signature */
 .instrument-card,.track-card,.course-card{position:relative;overflow:hidden;background:#15161a!important;border:1px solid #303139!important;border-radius:0!important}
 .instrument-card::before,.track-card::before,.course-card::before{content:'';position:absolute;right:-45px;top:-45px;width:130px;height:130px;border:1px solid #393a42;border-radius:50%;transform:rotate(22deg)}
 .instrument-card:hover,.track-card:hover,.course-card:hover{transform:translateY(-3px);border-color:var(--nexa-acid)!important}
 
-/* Reduce the generic SaaS feel */
+/* Reduce generic SaaS feel */
 .card-grid,.cards,.commercial-grid{border-radius:0!important}
 .card-grid{gap:1px!important;background:#303139!important}
 .card-grid>*{border-radius:0!important}
 .badge,.tag,.pill,.status{border-radius:0!important;background:transparent!important;border:1px solid #444!important;color:#aaa!important}
 .status.active,.badge.active,.tag.active{border-color:var(--nexa-acid)!important;color:var(--nexa-acid)!important}
+
+/* NEXA credit / production signature */
+.nexa-credit{position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px max(28px,calc((100% - var(--nexa-max))/2));background:#0b0b0b!important;border-top:1px solid var(--nexa-line)!important;color:#77736d!important;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase}
+.nexa-credit .nexa-credit-label{display:flex;align-items:center;gap:10px}
+.nexa-credit .nexa-mark{color:var(--nexa-acid);font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:.12em}
+.nexa-credit a{color:var(--nexa-paper)!important;text-decoration:none;border-bottom:1px solid #555!important;padding-bottom:2px;transition:.2s}
+.nexa-credit a:hover{color:var(--nexa-acid)!important;border-color:var(--nexa-acid)!important}
 
 footer{background:#0b0b0b!important;border-top:1px solid var(--nexa-line)!important;color:#77736d!important}
 
@@ -111,4 +119,6 @@ footer{background:#0b0b0b!important;border-top:1px solid var(--nexa-line)!import
   .commercial-hero{padding:32px!important}
   .commercial-hero h1{font-size:clamp(3rem,16vw,5.8rem)!important}
   .hero h1{font-size:clamp(3.6rem,19vw,7rem)!important}
+  .nexa-credit{padding:20px 18px;align-items:flex-start;flex-direction:column;gap:10px}
+  .hero::before,.commercial-hero::before{right:14px;top:18px}
 }
