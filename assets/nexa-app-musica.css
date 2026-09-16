@@ -1,124 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{--nexa-ink:#11100f;--nexa-ink-2:#171719;--nexa-paper:#f2efe8;--nexa-acid:#d9ff00;--nexa-violet:#7657ff;--nexa-muted:#8b8881;--nexa-line:rgba(242,239,232,.16);--nexa-max:1240px;--orange:#d9ff00;--orange2:#d9ff00;--cream:#f2efe8;--paper:#11100f;--ink:#f2efe8;--muted:#8b8881;--line:rgba(242,239,232,.16);--green:#8fe388;--shadow:0 22px 70px rgba(0,0,0,.34)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--nexa-ink)!important;color:var(--nexa-paper)!important;font-family:'DM Sans',sans-serif!important;overflow-x:hidden}::selection{background:var(--nexa-acid);color:var(--nexa-ink)}a{color:inherit}button,input,select,textarea{font-family:'DM Sans',sans-serif}.wrap{width:min(calc(100% - 56px),var(--nexa-max));margin:auto}
+header,.topbar,.site-header,.app-header,.nav,.navbar{background:rgba(17,16,15,.88)!important;border-bottom:1px solid var(--nexa-line)!important;backdrop-filter:blur(16px)}.brand{font-family:'Space Grotesk',sans-serif!important;letter-spacing:.06em!important;color:var(--nexa-paper)!important}nav a,.navlinks button,.navlinks a{font-size:.72rem!important;text-transform:uppercase;letter-spacing:.1em;color:var(--nexa-paper)!important;opacity:.72;transition:.2s}nav a:hover,.navlinks button:hover,.navlinks a:hover{opacity:1!important;color:var(--nexa-acid)!important}
+h1,h2,h3,h4,.hero h1,.section h1,.section h2{font-family:'Space Grotesk',sans-serif!important;letter-spacing:-.045em}h1{font-weight:600!important}.eyebrow,.kicker,.label,.section-kicker{color:var(--nexa-acid)!important;text-transform:uppercase;letter-spacing:.16em;font-size:.66rem;font-weight:700}
+button,.orange,.cta,.btn,.primary,.secondary,.action,.button{border-radius:0!important}.orange,.button-fill,.primary,.cta.primary,.btn-primary{background:var(--nexa-acid)!important;color:var(--nexa-ink)!important;border:1px solid var(--nexa-acid)!important;box-shadow:none!important;font-weight:700}.orange:hover,.button-fill:hover,.primary:hover,.cta.primary:hover,.btn-primary:hover{filter:brightness(.94);transform:translateY(-1px)}.button-line,.secondary,.btn-secondary,.ghost{background:transparent!important;color:var(--nexa-paper)!important;border:1px solid rgba(242,239,232,.35)!important}
+.panel,.card,.commercial-card,.dash-card,.tool,.portfolio-card,.workflow-col,.workflow-card,.commercial-live,.student-card,.teacher-card,.stat-card,.feature-card,.plan-card,.schedule-card,.lesson-card,.profile-card,.kpi-card{background:#15161a!important;border:1px solid #303139!important;border-radius:0!important;box-shadow:none!important}.card:hover,.commercial-card:hover,.tool:hover,.feature-card:hover{border-color:var(--nexa-acid)!important}
+.commercial-hero{background:radial-gradient(circle at 80% 20%,rgba(118,87,255,.28),transparent 28%),var(--nexa-ink)!important;border:1px solid #303139!important;border-radius:0!important;box-shadow:none!important;padding:48px!important}.commercial-hero h1{font-size:clamp(3rem,7vw,7rem)!important;line-height:.9!important;letter-spacing:-.07em!important;text-transform:uppercase}.commercial-hero p{color:#b9b5ad!important}.commercial-grid{gap:1px!important;background:#303139!important}.commercial-card{min-height:330px!important;padding:28px!important}.commercial-card.selected{border:1px solid var(--nexa-acid)!important;box-shadow:inset 0 3px 0 var(--nexa-acid)!important}.commercial-icon{width:58px;height:58px;border-radius:0!important;background:#202126!important;border:1px solid #303139!important;filter:grayscale(.2)}.commercial-card h2{font-size:2rem!important}.commercial-card p,.commercial-card li,.commercial-note{color:#999!important}.language-tabs button{border-radius:0!important;background:transparent!important;color:#aaa!important;border:1px solid #393a42!important}.language-tabs button.active{background:var(--nexa-acid)!important;color:var(--nexa-ink)!important;border-color:var(--nexa-acid)!important}.commercial-plan{gap:1px!important;background:#303139!important}.commercial-plan .panel,.commercial-live{border:0!important}.commercial-live{background:linear-gradient(145deg,#18181b,#11100f)!important}.commercial-live strong{color:var(--nexa-acid)!important}
+.section,.view,.main,.content,.page{background:transparent!important}.section{padding-top:110px!important;padding-bottom:110px!important}.view .wrap>h1,.view .wrap>h2{font-size:clamp(3rem,7vw,6rem)!important;line-height:.9!important;text-transform:uppercase}.notice{background:#15161a!important;border:1px solid #303139!important;border-left:2px solid var(--nexa-acid)!important;color:#aaa!important;border-radius:0!important}.progress,.progress-bar,.bar{background:#292a2f!important;border-radius:0!important}.progress>span,.progress-bar>span,.bar>span{background:linear-gradient(90deg,var(--nexa-violet),var(--nexa-acid))!important;border-radius:0!important}
+input,select,textarea{background:#111216!important;color:var(--nexa-paper)!important;border:1px solid #393a42!important;border-radius:0!important;outline:none}input:focus,select:focus,textarea:focus{border-color:var(--nexa-acid)!important;box-shadow:0 0 0 1px var(--nexa-acid)!important}
+table{border-collapse:collapse!important;background:#15161a!important;color:var(--nexa-paper)!important}th,td{border-color:#303139!important}th{font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:#999!important}.schedule,.agenda-grid,.calendar-grid{border-color:#303139!important;background:#15161a!important}.slot,.time-slot,.calendar-day,.agenda-card{background:#15161a!important;border:1px solid #303139!important;border-radius:0!important}.slot:hover,.time-slot:hover,.calendar-day:hover,.agenda-card:hover{border-color:var(--nexa-acid)!important}.slot.selected,.time-slot.selected,.calendar-day.today,.agenda-card.priority{background:#1d1e21!important;border-color:var(--nexa-acid)!important;box-shadow:inset 0 2px 0 var(--nexa-acid)!important}
+.hero,.commercial-hero{position:relative;overflow:hidden}.hero::after,.commercial-hero::after{content:'';position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(242,239,232,.14) 1px,transparent 1px);background-size:5px 5px;opacity:.035}.hero h1{font-size:clamp(4rem,9vw,9rem)!important;line-height:.84!important;text-transform:uppercase!important}.hero h1 em,.hero h1 span{color:var(--nexa-acid)!important}
+.instrument-card,.track-card,.course-card{position:relative;overflow:hidden;background:#15161a!important;border:1px solid #303139!important;border-radius:0!important}.instrument-card::before,.track-card::before,.course-card::before{content:'';position:absolute;right:-45px;top:-45px;width:130px;height:130px;border:1px solid #393a42;border-radius:50%;transform:rotate(22deg)}.instrument-card:hover,.track-card:hover,.course-card:hover{transform:translateY(-3px);border-color:var(--nexa-acid)!important}
+.card-grid,.cards,.commercial-grid{border-radius:0!important}.card-grid{gap:1px!important;background:#303139!important}.card-grid>*{border-radius:0!important}.badge,.tag,.pill,.status{border-radius:0!important;background:transparent!important;border:1px solid #444!important;color:#aaa!important}.status.active,.badge.active,.tag.active{border-color:var(--nexa-acid)!important;color:var(--nexa-acid)!important}
+.nexa-credit{position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px max(28px,calc((100% - var(--nexa-max))/2));background:#0b0b0b!important;border-top:1px solid var(--nexa-line)!important;color:#77736d!important;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase}.nexa-credit .nexa-credit-label{display:flex;align-items:center;gap:10px}.nexa-credit .nexa-mark{color:var(--nexa-acid);font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:.12em}.nexa-credit a{color:var(--nexa-paper)!important;text-decoration:none;border-bottom:1px solid #555!important;padding-bottom:2px;transition:.2s}.nexa-credit a:hover{color:var(--nexa-acid)!important;border-color:var(--nexa-acid)!important}footer{background:#0b0b0b!important;border-top:1px solid var(--nexa-line)!important;color:#77736d!important}
+@media(max-width:850px){.wrap{width:min(calc(100% - 36px),var(--nexa-max))}.section{padding-top:85px!important;padding-bottom:85px!important}.commercial-hero{padding:32px!important}.commercial-hero h1{font-size:clamp(3rem,16vw,5.8rem)!important}.hero h1{font-size:clamp(3.6rem,19vw,7rem)!important}}
 
-:root{
-  --nexa-ink:#11100f;
-  --nexa-ink-2:#171719;
-  --nexa-paper:#f2efe8;
-  --nexa-acid:#d9ff00;
-  --nexa-violet:#7657ff;
-  --nexa-muted:#8b8881;
-  --nexa-line:rgba(242,239,232,.16);
-  --nexa-max:1240px;
-  --orange:#d9ff00;
-  --orange2:#d9ff00;
-  --cream:#f2efe8;
-  --paper:#11100f;
-  --ink:#f2efe8;
-  --muted:#8b8881;
-  --line:rgba(242,239,232,.16);
-  --green:#8fe388;
-  --shadow:0 22px 70px rgba(0,0,0,.34);
-}
-
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--nexa-ink)!important;color:var(--nexa-paper)!important;font-family:'DM Sans',sans-serif!important;overflow-x:hidden}
-::selection{background:var(--nexa-acid);color:var(--nexa-ink)}
-a{color:inherit}
-button,input,select,textarea{font-family:'DM Sans',sans-serif}
-
-.wrap{width:min(calc(100% - 56px),var(--nexa-max));margin:auto}
-
-header,.topbar,.site-header,.app-header,.nav,.navbar{background:rgba(17,16,15,.88)!important;border-bottom:1px solid var(--nexa-line)!important;backdrop-filter:blur(16px)}
-.brand{font-family:'Space Grotesk',sans-serif!important;letter-spacing:.06em!important;color:var(--nexa-paper)!important}
-nav a,.navlinks button,.navlinks a{font-size:.72rem!important;text-transform:uppercase;letter-spacing:.1em;color:var(--nexa-paper)!important;opacity:.72;transition:.2s}
-nav a:hover,.navlinks button:hover,.navlinks a:hover{opacity:1!important;color:var(--nexa-acid)!important}
-
-h1,h2,h3,h4,.hero h1,.section h1,.section h2{font-family:'Space Grotesk',sans-serif!important;letter-spacing:-.045em}
-h1{font-weight:600!important}
-.eyebrow,.kicker,.label,.section-kicker{color:var(--nexa-acid)!important;text-transform:uppercase;letter-spacing:.16em;font-size:.66rem;font-weight:700}
-
-button,.orange,.cta,.btn,.primary,.secondary,.action,.button{border-radius:0!important}
-.orange,.button-fill,.primary,.cta.primary,.btn-primary{background:var(--nexa-acid)!important;color:var(--nexa-ink)!important;border:1px solid var(--nexa-acid)!important;box-shadow:none!important;font-weight:700}
-.orange:hover,.button-fill:hover,.primary:hover,.cta.primary:hover,.btn-primary:hover{filter:brightness(.94);transform:translateY(-1px)}
-.button-line,.secondary,.btn-secondary,.ghost{background:transparent!important;color:var(--nexa-paper)!important;border:1px solid rgba(242,239,232,.35)!important}
-
-.panel,.card,.commercial-card,.dash-card,.tool,.portfolio-card,.workflow-col,.workflow-card,.commercial-live,.student-card,.teacher-card,.stat-card,.feature-card,.plan-card,.schedule-card,.lesson-card,.profile-card,.kpi-card{
-  background:#15161a!important;border:1px solid #303139!important;border-radius:0!important;box-shadow:none!important;
-}
-.card:hover,.commercial-card:hover,.tool:hover,.feature-card:hover{border-color:var(--nexa-acid)!important}
-
-/* Editorial shell */
-.hero,.commercial-hero{position:relative;overflow:hidden}
-.hero::after,.commercial-hero::after{content:'';position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(242,239,232,.18) 1px,transparent 1px);background-size:5px 5px;opacity:.035}
-.hero::before,.commercial-hero::before{content:'NEXA / MUSIC';position:absolute;right:28px;top:28px;z-index:1;font:700 .58rem/1 'Space Grotesk',sans-serif;letter-spacing:.18em;color:#77736d;writing-mode:vertical-rl}
-.hero h1{font-size:clamp(4rem,9vw,9rem)!important;line-height:.84!important;text-transform:uppercase!important}
-.hero h1 em,.hero h1 span{color:var(--nexa-acid)!important}
-
-.commercial-hero{background:radial-gradient(circle at 80% 20%,rgba(118,87,255,.28),transparent 28%),var(--nexa-ink)!important;border:1px solid #303139!important;border-radius:0!important;box-shadow:none!important;padding:48px!important}
-.commercial-hero h1{font-size:clamp(3rem,7vw,7rem)!important;line-height:.9!important;letter-spacing:-.07em!important;text-transform:uppercase}
-.commercial-hero p{color:#b9b5ad!important}
-.commercial-grid{gap:1px!important;background:#303139!important}
-.commercial-card{min-height:330px!important;padding:28px!important}
-.commercial-card.selected{border:1px solid var(--nexa-acid)!important;box-shadow:inset 0 3px 0 var(--nexa-acid)!important}
-.commercial-icon{width:58px;height:58px;border-radius:0!important;background:#202126!important;border:1px solid #303139!important;filter:grayscale(.2)}
-.commercial-card h2{font-size:2rem!important}
-.commercial-card p,.commercial-card li,.commercial-note{color:#999!important}
-.language-tabs button{border-radius:0!important;background:transparent!important;color:#aaa!important;border:1px solid #393a42!important}
-.language-tabs button.active{background:var(--nexa-acid)!important;color:var(--nexa-ink)!important;border-color:var(--nexa-acid)!important}
-.commercial-plan{gap:1px!important;background:#303139!important}
-.commercial-plan .panel,.commercial-live{border:0!important}
-.commercial-live{background:linear-gradient(145deg,#18181b,#11100f)!important}
-.commercial-live strong{color:var(--nexa-acid)!important}
-
-/* Student / teacher / management surfaces */
-.section,.view,.main,.content,.page{background:transparent!important}
-.section{padding-top:110px!important;padding-bottom:110px!important}
-.view .wrap>h1,.view .wrap>h2{font-size:clamp(3rem,7vw,6rem)!important;line-height:.9!important;text-transform:uppercase!important}
-.notice{background:#15161a!important;border:1px solid #303139!important;border-left:2px solid var(--nexa-acid)!important;color:#aaa!important;border-radius:0!important}
-.progress,.progress-bar,.bar{background:#292a2f!important;border-radius:0!important}
-.progress>span,.progress-bar>span,.bar>span{background:linear-gradient(90deg,var(--nexa-violet),var(--nexa-acid))!important;border-radius:0!important}
-
-/* Forms */
-input,select,textarea{background:#111216!important;color:var(--nexa-paper)!important;border:1px solid #393a42!important;border-radius:0!important;outline:none}
-input:focus,select:focus,textarea:focus{border-color:var(--nexa-acid)!important;box-shadow:0 0 0 1px var(--nexa-acid)!important}
-
-/* Tables / schedules */
-table{border-collapse:collapse!important;background:#15161a!important;color:var(--nexa-paper)!important}
-th,td{border-color:#303139!important}
-th{font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:#999!important}
-.schedule,.agenda-grid,.calendar-grid{border-color:#303139!important;background:#15161a!important}
-.slot,.time-slot,.calendar-day,.agenda-card{background:#15161a!important;border:1px solid #303139!important;border-radius:0!important}
-.slot:hover,.time-slot:hover,.calendar-day:hover,.agenda-card:hover{border-color:var(--nexa-acid)!important}
-.slot.selected,.time-slot.selected,.calendar-day.today,.agenda-card.priority{background:#1d1e21!important;border-color:var(--nexa-acid)!important;box-shadow:inset 0 2px 0 var(--nexa-acid)!important}
-
-/* Conceptual music signature */
-.instrument-card,.track-card,.course-card{position:relative;overflow:hidden;background:#15161a!important;border:1px solid #303139!important;border-radius:0!important}
-.instrument-card::before,.track-card::before,.course-card::before{content:'';position:absolute;right:-45px;top:-45px;width:130px;height:130px;border:1px solid #393a42;border-radius:50%;transform:rotate(22deg)}
-.instrument-card:hover,.track-card:hover,.course-card:hover{transform:translateY(-3px);border-color:var(--nexa-acid)!important}
-
-/* Reduce generic SaaS feel */
-.card-grid,.cards,.commercial-grid{border-radius:0!important}
-.card-grid{gap:1px!important;background:#303139!important}
-.card-grid>*{border-radius:0!important}
-.badge,.tag,.pill,.status{border-radius:0!important;background:transparent!important;border:1px solid #444!important;color:#aaa!important}
-.status.active,.badge.active,.tag.active{border-color:var(--nexa-acid)!important;color:var(--nexa-acid)!important}
-
-/* NEXA credit / production signature */
-.nexa-credit{position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px max(28px,calc((100% - var(--nexa-max))/2));background:#0b0b0b!important;border-top:1px solid var(--nexa-line)!important;color:#77736d!important;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase}
-.nexa-credit .nexa-credit-label{display:flex;align-items:center;gap:10px}
-.nexa-credit .nexa-mark{color:var(--nexa-acid);font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:.12em}
-.nexa-credit a{color:var(--nexa-paper)!important;text-decoration:none;border-bottom:1px solid #555!important;padding-bottom:2px;transition:.2s}
-.nexa-credit a:hover{color:var(--nexa-acid)!important;border-color:var(--nexa-acid)!important}
-
-footer{background:#0b0b0b!important;border-top:1px solid var(--nexa-line)!important;color:#77736d!important}
-
-@media(max-width:850px){
-  .wrap{width:min(calc(100% - 36px),var(--nexa-max))}
-  .section{padding-top:85px!important;padding-bottom:85px!important}
-  .commercial-hero{padding:32px!important}
-  .commercial-hero h1{font-size:clamp(3rem,16vw,5.8rem)!important}
-  .hero h1{font-size:clamp(3.6rem,19vw,7rem)!important}
-  .nexa-credit{padding:20px 18px;align-items:flex-start;flex-direction:column;gap:10px}
-  .hero::before,.commercial-hero::before{right:14px;top:18px}
-}
+/* APP MUSICA — NEXA EDITORIAL IDENTITY v2 */
+:root{--music-orange:#ff9d1c;--music-orange-soft:#ffb23e;--music-black:#0b0d10;--music-paper:#f4f0e7;--music-gray:#a7a29a;--music-line:rgba(244,240,231,.18)}
+body{background:var(--music-black)!important;color:var(--music-paper)!important}header{background:rgba(11,13,16,.94)!important}.brand{font-size:0!important;width:170px!important;height:54px!important;background:url('app-musica-logo-pixel.svg') center/contain no-repeat!important;display:block!important}.brand .note,.brand b{display:none!important}
+.hero{background:radial-gradient(circle at 74% 26%,rgba(255,157,28,.16),transparent 26%),radial-gradient(circle at 92% 72%,rgba(118,87,255,.12),transparent 22%),#0b0d10!important;min-height:590px!important}.hero-grid{min-height:590px!important}.hero h1{font-family:'Space Grotesk',sans-serif!important;font-weight:700!important;text-transform:uppercase!important;font-size:clamp(3.4rem,7vw,7.5rem)!important;line-height:.84!important}.hero h1 em{color:var(--music-orange)!important}.hero::before{content:'APP MÚSICA / NEXA — STUDIO'!important;color:#6e6a63!important}.hero::after{background-image:linear-gradient(90deg,transparent 49.8%,rgba(255,255,255,.08) 50%,transparent 50.2%),radial-gradient(rgba(255,255,255,.18) 1px,transparent 1px)!important;background-size:100% 100%,5px 5px!important}
+.instrument-card{background:#111419!important;border:1px solid #3a3d43!important;border-radius:0!important;min-height:275px!important}.instrument-card:hover,.instrument-card.selected{border-color:var(--music-orange)!important;transform:translateY(-5px)!important}.instrument-card::after{content:'↗';position:absolute;right:12px;bottom:10px;color:var(--music-orange);font-size:1.15rem}.instrument-visual{font-size:5rem!important;filter:saturate(.9) contrast(1.08)}.instrument-title{text-transform:uppercase;letter-spacing:.12em;font-size:.68rem!important;color:#8e8981}.quick{background:#0b0d10!important}.portal{border-radius:0!important;background:#12151a!important;color:var(--music-paper)!important;border:1px solid #30343b!important}.portal.teacher{background:#151218!important;border-left:2px solid var(--music-orange)!important}
+.section,.dashboard{background:#0b0d10!important}.feature,.panel,.lesson-card,.plan-card,.contact-card,.about-card,.kpi{background:#111419!important;border:1px solid #30343b!important;border-radius:0!important;box-shadow:none!important;color:var(--music-paper)!important}.feature p,.muted,.dashboard-head p,.profile-top p{color:#99958e!important}.stats{background:#090a0c!important;border-top:1px solid var(--music-line);border-bottom:1px solid var(--music-line)}.stats-grid{grid-template-columns:repeat(4,1fr)!important}.profile-avatar{background:#111419 url('app-musica-icon.svg') center/cover no-repeat!important;border:1px solid #3b3d43!important;border-radius:0!important;color:transparent!important}.material-icon,.portal-icon,.instrument-badge{border-radius:0!important;background:#17191e!important;border:1px solid #363940!important}.bar{background:#292c31!important;border-radius:0!important}.bar i{background:linear-gradient(90deg,#7657ff,var(--music-orange))!important;border-radius:0!important}.orange,.arrow,.primary,.btn-primary,.cta.primary{background:var(--music-orange)!important;color:#0b0d10!important;border-radius:0!important;box-shadow:none!important}.outline,.button-line,.secondary,.btn-secondary,.ghost{border-radius:0!important}.nexa-credit{background:#f4f0e7!important;color:#6d6962!important;border-top:1px solid #ded8cd!important}.nexa-credit .nexa-mark{color:#11100f!important}.nexa-credit a{color:#11100f!important;border-color:#aaa49a!important}footer{background:#0b0d10!important}
+@media(max-width:850px){.brand{width:145px!important;height:48px!important}.hero{min-height:650px!important}.hero-grid{min-height:650px!important}.hero h1{font-size:clamp(3rem,15vw,5.8rem)!important}}
