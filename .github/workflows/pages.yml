@@ -87,7 +87,7 @@ jobs:
         shell: python
         run: |
           from pathlib import Path
-          links=['<link rel="stylesheet" href="assets/nexa-app-musica.css">','<link rel="stylesheet" href="assets/app-musica-editorial-v2.css">','<link rel="stylesheet" href="assets/nexa-consistency-v5.css">']
+          links=['<link rel="stylesheet" href="assets/nexa-app-musica.css">','<link rel="stylesheet" href="assets/app-musica-editorial-v2.css">','<link rel="stylesheet" href="assets/nexa-consistency-v5.css">','<link rel="stylesheet" href="assets/nexa-consistency-v5b.css">']
           credit='''<div class="nexa-credit"><div class="nexa-credit-label"><span class="nexa-mark">NEXA — STUDIO</span><span>Design · Tecnologia · Comunicação Visual</span></div><a href="https://github.com/sayjinblackbelt/NEXA-Studio" target="_blank" rel="noopener noreferrer">Powered by NEXA Studio ↗</a></div>'''
           pages=['index.html','comercial.html','aluno.html','professor.html','agendamento.html','gestao.html']
           for name in pages:
