@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "APP Música — Production Domain Model",
+  "description": "Canonical domain contract for migration from localStorage MVP to authenticated PostgreSQL-backed product.",
+  "entities": {
+    "users": {"fields":["id","role","name","email","status","created_at"]},
+    "teacher_profiles": {"fields":["id","user_id","bio","active"]},
+    "student_profiles": {"fields":["id","user_id","primary_track_id"]},
+    "tracks": {"fields":["id","name","type","active"]},
+    "track_modules": {"fields":["id","track_id","key","title","position","active"]},
+    "availability_slots": {"fields":["id","teacher_id","starts_at","ends_at","status"]},
+    "bookings": {"fields":["id","student_id","teacher_id","slot_id","status","created_at","cancelled_at"]},
+    "plans": {"fields":["id","name","duration_months","price","live_lessons_per_month","live_duration_minutes","active"]},
+    "subscriptions": {"fields":["id","student_id","plan_id","status","starts_at","ends_at","provider_reference"]},
+    "lessons": {"fields":["id","booking_id","track_module_id","title","notes","status","completed_at"]},
+    "skills": {"fields":["id","track_id","name","position"]},
+    "lesson_skills": {"fields":["lesson_id","skill_id","level","observation"]},
+    "progress": {"fields":["id","student_id","skill_id","level","updated_at"]},
+    "materials": {"fields":["id","track_id","module_id","title","type","storage_key","visibility"]}
+  },
+  "relationships": [
+    "users 1:1 teacher_profiles",
+    "users 1:1 student_profiles",
+    "tracks 1:N track_modules",
+    "teachers 1:N availability_slots",
+    "students 1:N bookings",
+    "teachers 1:N bookings",
+    "availability_slots 1:0..1 bookings",
+    "students 1:N subscriptions",
+    "plans 1:N subscriptions",
+    "bookings 1:0..1 lessons",
+    "tracks 1:N skills",
+    "lessons N:N skills through lesson_skills",
+    "students N:N skills through progress",
+    "tracks 1:N materials"
+  ],
+  "invariants": [
+    "A booking must reference exactly one student, one teacher and one slot.",
+    "A slot can have at most one active booking.",
+    "A reserved slot cannot be deleted; it can transition according to cancellation rules.",
+    "Teacher availability is owned by the teacher and is not global.",
+    "Subscription access is determined by status and validity dates on the server.",
+    "Student primary track is explicit; Linguagem Musical modules are Rítmica and Solfejo.",
+    "No production entity may depend on localStorage as its source of truth."
+  ]
+}
