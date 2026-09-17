@@ -1,0 +1,24 @@
+/* APP MÚSICA — FINAL NEXA MICRO REFINEMENT v6 */
+:root{--nexa-focus:#d8ff3e;--nexa-violet:#7657ff;--music-orange:#ff9d1c}
+body:has(.back) :focus-visible,body:has(.top) :focus-visible{outline:2px solid var(--nexa-focus)!important;outline-offset:3px!important}
+body:has(.back) ::selection,body:has(.top) ::selection{background:var(--nexa-focus)!important;color:#11100f!important}
+body:has(.back) p,body:has(.top) p{max-width:78ch}
+body:has(.back) .hero p,body:has(.top) .hero p{max-width:68ch!important;line-height:1.65!important}
+body:has(.back) .card h2,body:has(.back) .panel h2{line-height:1.08!important}
+body:has(.back) .card+ .card,body:has(.back) .panel+ .panel{margin-top:16px}
+body:has(.back) .actions{align-items:center!important}
+body:has(.back) .btn,body:has(.back) .back,body:has(.back) .switch button,body:has(.back) .tab,body:has(.back) .language-tabs button{min-height:40px!important}
+body:has(.back) .brand{background-position:left center!important}
+body:has(.back) .nexa-credit{min-height:68px!important}
+body:has(.back) .nexa-credit a{white-space:nowrap!important}
+body:has(.back) .empty{text-align:center!important;border:1px dashed #3a3d44!important;padding:24px!important;color:#8f8b84!important}
+body:has(.back) .notice.show{animation:nexaNotice .18s ease-out both!important}
+@keyframes nexaNotice{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+body:has(.top) .top{min-height:58px!important;align-items:center!important}
+body:has(.top) .top a{display:inline-flex!important;align-items:center!important;justify-content:center!important}
+body:has(.top) .pill{letter-spacing:.08em!important;text-transform:uppercase!important}
+body:has(.top) .plan.featured{transform:none!important}
+body:has(.top) .plan.featured:before{content:'DESTAQUE';display:block;color:#d8ff3e;font-size:.58rem;font-weight:700;letter-spacing:.14em;margin-bottom:10px}
+body:has(.top) .commercial-note{line-height:1.45!important}
+@media(max-width:850px){body:has(.back) .actions{align-items:stretch!important}body:has(.back) .actions .btn{width:100%!important}body:has(.back) .nexa-credit a{white-space:normal!important}body:has(.top) .top{padding:10px 0!important}body:has(.top) .top a{flex:1 1 auto}}
+@media(max-width:390px){body:has(.back) .nexa-credit{font-size:.6rem!important}body:has(.back) .nexa-credit a{width:100%!important;text-align:left}body:has(.top) .hero h1{font-size:clamp(2.25rem,11.2vw,4.2rem)!important}}
