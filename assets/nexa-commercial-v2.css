@@ -1,0 +1,2 @@
+/* COMMERCIAL MOBILE OVERFLOW FIX */
+@media(max-width:850px){body:has(.top) .courses,body:has(.top) .trial,body:has(.top) .plans,body:has(.top) .grid{grid-template-columns:1fr!important}}
